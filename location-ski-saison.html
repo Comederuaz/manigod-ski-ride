@@ -16,15 +16,36 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap" rel="stylesheet">
+<meta name="rentool-channel" content="stable">
+<link rel="preconnect" href="https://cdn.rentool.io" crossorigin>
+<link rel="preconnect" href="https://api2.rentool.io" crossorigin>
 <link rel="stylesheet" href="css/site.css">
+<script defer src="js/site-header.js"></script>
 </head>
 <body>
 
 <div class="topo">
 <header class="site-header">
 <a class="brand" href="index.html"><img data-f="manigod-ski-ride-logo-chamois" src="images/manigod-ski-ride-logo-chamois.png" alt="Manigod Ski Ride"><span><b>MANIGOD</b><small>SKI RIDE</small><em>MOUNTAIN SPIRIT</em></span></a>
-<nav class="site-nav" aria-label="Menu principal"><a href="location.html" class="is-active" aria-current="page">[ LOCATION ]</a><a href="consigne-a-ski.html">CONSIGNE</a><a href="atelier.html">ATELIER</a><a href="bootfitting.html">BOOTFITTING</a><a href="le-magasin.html">LE MAGASIN</a></nav>
-<div class="header-actions"><a class="btn-book" href="location.html#reserver">RÉSERVER EN LIGNE →</a><a class="lang" href="en/location-ski-saison.html" aria-label="English version">EN</a><button class="burger" aria-label="Ouvrir le menu" onclick="this.closest('header').classList.toggle('open')"><i></i><i></i><i></i></button></div>
+<nav class="site-nav" id="site-nav" aria-label="Menu principal">
+<a href="location.html" class="is-active">LOCATION DE SKI</a>
+<div class="nav-services">
+<button type="button" class="nav-services__toggle" aria-expanded="false" aria-controls="services-menu">SERVICES <svg class="nav-services__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></button>
+<div class="nav-services__menu" id="services-menu" inert>
+<div class="nav-services__items">
+<a href="consigne-a-ski.html"><span class="service-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18"/><path d="M12 3v18M8 8v3m8-3v3M4 17h16"/></svg></span><span class="service-link__copy"><strong>CONSIGNE</strong><span>Vos chaussures et vos skis au chaud, au pied des pistes.</span></span><span class="service-link__arrow" aria-hidden="true">→</span></a>
+<a href="atelier.html"><span class="service-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6 4 4m-8 4-6 6m8-12a6 6 0 0 0-7 7l-3 3 4 4 3-3a6 6 0 0 0 7-7l-4 4-4-4 4-4Z"/></svg></span><span class="service-link__copy"><strong>ATELIER</strong><span>Affûtage, fartage et réparation de vos skis.</span></span><span class="service-link__arrow" aria-hidden="true">→</span></a>
+<a href="bootfitting.html"><span class="service-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8v9l5 4v5H4v-6l3-3V3Zm0 5h8M4 17h16M7 12h5"/></svg></span><span class="service-link__copy"><strong>BOOTFITTING</strong><span>Des chaussures adaptées à vos pieds pour plus de confort.</span></span><span class="service-link__arrow" aria-hidden="true">→</span></a>
+</div>
+</div>
+</div>
+<a href="le-magasin.html">LE MAGASIN</a>
+</nav>
+<div class="header-actions">
+<div class="header-widgets"><rentool-cart-widget embed-token="rtw_1a21af10f247a7c5ac82ad02b1dd2f8e" locale="fr" account-id="jh77fgr0xgjmwacg069jq5jc6d8g4pws" theme="light" style="--rentool-border: #dde2e1; --rentool-primary: #f0a06a; --rentool-bg: #ffffff; --rentool-text: #0c1c1f; --rentool-radius: 0px; --rentool-radius-button: 0px; --rentool-radius-input: 0px; --rentool-radius-block: 0px; --rentool-radius-modal: 0px; "></rentool-cart-widget><rentool-account-widget embed-token="rtw_1a21af10f247a7c5ac82ad02b1dd2f8e" locale="fr" account-id="jh77fgr0xgjmwacg069jq5jc6d8g4pws" theme="light" style="--rentool-border: #dde2e1; --rentool-primary: #f0a06a; --rentool-bg: #ffffff; --rentool-text: #0c1c1f; --rentool-radius: 0px; --rentool-radius-button: 0px; --rentool-radius-input: 0px; --rentool-radius-block: 0px; --rentool-radius-modal: 0px; "></rentool-account-widget></div>
+<a class="lang" href="en/location-ski-saison.html" aria-label="English version">EN</a>
+<button type="button" class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav"><i></i><i></i><i></i></button>
+</div>
 </header>
 <section style="max-width: 1000px; margin: 0 auto; padding: 90px 40px 64px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px"><span style="font-size: 13px; letter-spacing: 1px; color: #677475"><a href="index.html" style="color: #677475">Accueil</a> / Location de ski à la saison</span><span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 12px; letter-spacing: 2px; color: #2E8784">[ SAISON ]</span><h1 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 44px; line-height: 50px">LOCATION DE SKI À LA SAISON</h1><div style="margin: 0; font-size: 17px; line-height: 28px; color: #3E4B4D">Skis et chaussures pour tout l'hiver, au Col de la Croix-Fry.</div><div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #DDE2E1; padding-top: 22px"><h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: .5px; color: #0C1C1F">Votre matériel pour tout l'hiver</h2><p style="margin: 0; font-size: 16px; line-height: 26px; color: #3E4B4D">Louez skis et chaussures pour toute la saison et skiez quand vous voulez, sans repasser au magasin. Pratique si vous skiez souvent à Manigod.</p></div><div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #DDE2E1; padding-top: 22px"><h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: .5px; color: #0C1C1F">Comment ça marche</h2><p style="margin: 0; font-size: 16px; line-height: 26px; color: #3E4B4D">Vous choisissez votre matériel au magasin, on le règle à votre taille, vous le gardez jusqu'à la fin de la saison. Pour la période et la date de retour, appelez-nous au 04 50 44 91 39 ou écrivez-nous à <a href="mailto:info@manigod-ski-ride.com" style="color: #C8632A; border-bottom: 1px solid #C8632A">info@manigod-ski-ride.com</a>.</p></div><div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #DDE2E1; padding-top: 22px"><h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: .5px; color: #0C1C1F">Tarifs</h2><p style="margin: 0; font-size: 16px; line-height: 26px; color: #3E4B4D">Sur demande : appelez-nous au 04 50 44 91 39 ou écrivez-nous à <a href="mailto:info@manigod-ski-ride.com" style="color: #C8632A; border-bottom: 1px solid #C8632A">info@manigod-ski-ride.com</a>.</p></div><div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #DDE2E1; padding-top: 22px"><h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: .5px; color: #0C1C1F">Enfants qui grandissent</h2><p style="margin: 0; font-size: 16px; line-height: 26px; color: #3E4B4D">Parlons-en : appelez-nous ou passez au magasin.</p></div><div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #DDE2E1; padding-top: 22px"><h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: .5px; color: #0C1C1F">Entretien compris ?</h2><p style="margin: 0; font-size: 16px; line-height: 26px; color: #3E4B4D">Notre <a href="atelier.html" style="color: #C8632A; border-bottom: 1px solid #C8632A">atelier</a> entretient vos skis en cours de saison. Demandez-nous les conditions au magasin.</p></div><div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid #DDE2E1; padding-top: 22px"><h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 20px; line-height: 26px; letter-spacing: .5px; color: #0C1C1F">Et pour laisser le matériel au col</h2><p style="margin: 0; font-size: 16px; line-height: 26px; color: #3E4B4D">Pensez à la <a href="consigne-a-ski.html" style="color: #C8632A; border-bottom: 1px solid #C8632A">consigne chauffée</a> à la saison : vos skis et chaussures vous attendent au pied des pistes.</p></div></section>
 <footer style="border-top: 1px solid #DDE2E1; background: rgba(6,16,18,0.6)">
@@ -56,5 +77,6 @@
 </footer>
 </div>
 
-<a id="fab-reserver" href="location.html#reserver">RÉSERVEZ →</a></body>
+<a id="fab-reserver" href="location.html#reserver">RÉSERVEZ →</a><script type="module" src="https://cdn.rentool.io/widgets/v1/loader.js" data-rentool-channel="stable" crossorigin="anonymous" fetchpriority="high"></script>
+</body>
 </html>

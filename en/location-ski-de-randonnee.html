@@ -17,15 +17,36 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap" rel="stylesheet">
+<meta name="rentool-channel" content="stable">
+<link rel="preconnect" href="https://cdn.rentool.io" crossorigin>
+<link rel="preconnect" href="https://api2.rentool.io" crossorigin>
 <link rel="stylesheet" href="../css/site.css">
+<script defer src="../js/site-header.js"></script>
 </head>
 <body>
 
 <div class="topo">
 <header class="site-header">
 <a class="brand" href="index.html"><img data-f="manigod-ski-ride-logo-chamois" src="../images/manigod-ski-ride-logo-chamois.png" alt="Manigod Ski Ride"><span><b>MANIGOD</b><small>SKI RIDE</small><em>MOUNTAIN SPIRIT</em></span></a>
-<nav class="site-nav" aria-label="Main menu"><a href="location.html" class="is-active" aria-current="page">[ RENTAL ]</a><a href="consigne-a-ski.html">SKI LOCKERS</a><a href="atelier.html">WORKSHOP</a><a href="bootfitting.html">BOOTFITTING</a><a href="le-magasin.html">THE SHOP</a></nav>
-<div class="header-actions"><a class="btn-book" href="location.html#reserver">BOOK ONLINE →</a><a class="lang" href="../location-ski-de-randonnee.html" aria-label="Version française">FR</a><button class="burger" aria-label="Menu" onclick="this.closest('header').classList.toggle('open')"><i></i><i></i><i></i></button></div>
+<nav class="site-nav" id="site-nav" aria-label="Main menu">
+<a href="location.html" class="is-active">SKI RENTAL</a>
+<div class="nav-services">
+<button type="button" class="nav-services__toggle" aria-expanded="false" aria-controls="services-menu">SERVICES <svg class="nav-services__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></button>
+<div class="nav-services__menu" id="services-menu" inert>
+<div class="nav-services__items">
+<a href="consigne-a-ski.html"><span class="service-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18"/><path d="M12 3v18M8 8v3m8-3v3M4 17h16"/></svg></span><span class="service-link__copy"><strong>SKI LOCKERS</strong><span>Keep your boots and skis warm at the slopes.</span></span><span class="service-link__arrow" aria-hidden="true">→</span></a>
+<a href="atelier.html"><span class="service-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6 4 4m-8 4-6 6m8-12a6 6 0 0 0-7 7l-3 3 4 4 3-3a6 6 0 0 0 7-7l-4 4-4-4 4-4Z"/></svg></span><span class="service-link__copy"><strong>WORKSHOP</strong><span>Sharpening, waxing and repairs for your skis.</span></span><span class="service-link__arrow" aria-hidden="true">→</span></a>
+<a href="bootfitting.html"><span class="service-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8v9l5 4v5H4v-6l3-3V3Zm0 5h8M4 17h16M7 12h5"/></svg></span><span class="service-link__copy"><strong>BOOTFITTING</strong><span>Ski boots adapted to your feet for greater comfort.</span></span><span class="service-link__arrow" aria-hidden="true">→</span></a>
+</div>
+</div>
+</div>
+<a href="le-magasin.html">THE SHOP</a>
+</nav>
+<div class="header-actions">
+<div class="header-widgets"><rentool-cart-widget embed-token="rtw_1a21af10f247a7c5ac82ad02b1dd2f8e" locale="en" account-id="jh77fgr0xgjmwacg069jq5jc6d8g4pws" theme="light" style="--rentool-border: #dde2e1; --rentool-primary: #f0a06a; --rentool-bg: #ffffff; --rentool-text: #0c1c1f; --rentool-radius: 0px; --rentool-radius-button: 0px; --rentool-radius-input: 0px; --rentool-radius-block: 0px; --rentool-radius-modal: 0px; "></rentool-cart-widget><rentool-account-widget embed-token="rtw_1a21af10f247a7c5ac82ad02b1dd2f8e" locale="en" account-id="jh77fgr0xgjmwacg069jq5jc6d8g4pws" theme="light" style="--rentool-border: #dde2e1; --rentool-primary: #f0a06a; --rentool-bg: #ffffff; --rentool-text: #0c1c1f; --rentool-radius: 0px; --rentool-radius-button: 0px; --rentool-radius-input: 0px; --rentool-radius-block: 0px; --rentool-radius-modal: 0px; "></rentool-account-widget></div>
+<a class="lang" href="../location-ski-de-randonnee.html" aria-label="Version française">FR</a>
+<button type="button" class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><i></i><i></i><i></i></button>
+</div>
 </header>
 <section class="hero">
 <div class="hero__media"><picture><source media="(max-width: 760px)" srcset="../images/manigod-ski-ride-ski-de-randonnee-coucher-de-soleil-mobile.jpg"><img data-f="manigod-ski-ride-ski-de-randonnee-coucher-de-soleil" src="../images/manigod-ski-ride-ski-de-randonnee-coucher-de-soleil.jpg" alt="Skinning up at sunset" style="object-position: 50% 55%"></picture></div>
@@ -86,5 +107,6 @@
 </footer>
 </div>
 
-<a id="fab-reserver" href="location.html#reserver">BOOK →</a></body>
+<a id="fab-reserver" href="location.html#reserver">BOOK →</a><script type="module" src="https://cdn.rentool.io/widgets/v1/loader.js" data-rentool-channel="stable" crossorigin="anonymous" fetchpriority="high"></script>
+</body>
 </html>
