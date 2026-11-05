@@ -137,14 +137,23 @@ window.__resaOpen=function(f){open(f,'du')};
 </section>
 
 <!-- module -->
-<section id="reserver" style="background: #F3F5F4; border-top: 1px solid #DDE2E1">
-<div style="max-width: 1360px; margin: 0 auto; padding: 100px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
-<h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 48px; line-height: 52px">RÉSERVER EN LIGNE</h2>
-<div style="min-height: 460px; border: 2px dashed #F0A06A; display: flex; align-items: center; justify-content: center; text-align: center; padding: 32px; box-sizing: border-box">
-<span style="max-width: 560px; font-size: 17px; line-height: 27px; color: #3E4B4D"><b style="font-family: Archivo, sans-serif; font-stretch: 125%; color: #C8632A; letter-spacing: 1.5px">MODULE TITEYA</b><br>Même produit qu'à Versant Nord, intégré ici dans la page, aux couleurs du site. Les dates saisies en haut de page arrivent pré-remplies.</span>
-</div>
+<section id="reserver" style="background: #F3F5F4; border-top: 1px solid #DDE2E1; border-bottom: 1px solid #DDE2E1">
+<div style="max-width: 1360px; margin: 0 auto; padding: 48px 40px 64px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 34px; line-height: 40px">RÉSERVEZ EN LIGNE</h2><span style="font-size: 15px; color: #3E4B4D">Choisissez vos dates, puis votre matériel.</span></div>
+<div style="display: flex; gap: 8px; align-items: center">
+<rentool-cart-widget embed-token="rtw_1a21af10f247a7c5ac82ad02b1dd2f8e" locale="fr" account-id="jh77fgr0xgjmwacg069jq5jc6d8g4pws" theme="light" style="--rentool-border: #dde2e1; --rentool-primary: #f0a06a; --rentool-secondary: #2e8784; --rentool-bg: #ffffff; --rentool-text: #0c1c1f; --rentool-radius: 0px; --rentool-radius-button: 0px; --rentool-radius-input: 0px; --rentool-radius-block: 0px; --rentool-radius-modal: 0px; --rentool-secondary-fg: #ffffff; --rentool-control-active: #2e8784; --rentool-control-active-fg: #ffffff;"></rentool-cart-widget>
+<rentool-account-widget embed-token="rtw_1a21af10f247a7c5ac82ad02b1dd2f8e" locale="fr" account-id="jh77fgr0xgjmwacg069jq5jc6d8g4pws" theme="light" style="--rentool-border: #dde2e1; --rentool-primary: #f0a06a; --rentool-secondary: #2e8784; --rentool-bg: #ffffff; --rentool-text: #0c1c1f; --rentool-radius: 0px; --rentool-radius-button: 0px; --rentool-radius-input: 0px; --rentool-radius-block: 0px; --rentool-radius-modal: 0px; --rentool-secondary-fg: #ffffff; --rentool-control-active: #2e8784; --rentool-control-active-fg: #ffffff;"></rentool-account-widget>
+</div></div>
+<style>rentool-rental-search{position:sticky;top:0;z-index:60;display:block;background:#F3F5F4;padding:10px 0;box-shadow:0 6px 12px -10px rgba(12,28,31,.35)}</style>
+<rentool-rental-search token="rtw_1a21af10f247a7c5ac82ad02b1dd2f8e" lang="fr" account-id="jh77fgr0xgjmwacg069jq5jc6d8g4pws" target-id="rentool-rental" search-params="" style="--rentool-border: #dde2e1; --rentool-primary: #f0a06a; --rentool-secondary: #2e8784; --rentool-bg: #ffffff; --rentool-text: #0c1c1f; --rentool-radius: 0px; --rentool-radius-button: 0px; --rentool-radius-input: 0px; --rentool-radius-block: 0px; --rentool-radius-modal: 0px; --rentool-secondary-fg: #ffffff; --rentool-control-active: #2e8784; --rentool-control-active-fg: #ffffff;"></rentool-rental-search>
+<rentool-rental-widget token="rtw_1a21af10f247a7c5ac82ad02b1dd2f8e" lang="fr" account-id="jh77fgr0xgjmwacg069jq5jc6d8g4pws" id="rentool-rental" desktop-carousel="true" search-params="" style="--rentool-border: #dde2e1; --rentool-primary: #f0a06a; --rentool-secondary: #2e8784; --rentool-bg: #ffffff; --rentool-text: #0c1c1f; --rentool-radius: 0px; --rentool-radius-button: 0px; --rentool-radius-input: 0px; --rentool-radius-block: 0px; --rentool-radius-modal: 0px; --rentool-secondary-fg: #ffffff; --rentool-control-active: #2e8784; --rentool-control-active-fg: #ffffff;"></rentool-rental-widget>
 </div>
 </section>
+<script>(()=>{const r=new URLSearchParams(location.search).get("ref");if(r)document.querySelectorAll("rentool-rental-widget, rentool-cart-widget").forEach(w=>w.setAttribute("partner-ref",r));})();</script>
+<script>(()=>{const u=new URL(location.href),q=u.searchParams;if(!q.get("rental-start")){q.set("rental-store","yd79q3we09fc3cbwjsfk85gxtn8g5jxj");q.set("rental-start","2026-12-20");q.set("rental-end","2026-12-25");q.set("rental-period","day");history.replaceState(null,"",u.toString());}})();</script>
+<script>(()=>{if(location.hash!=="#reserver")return;const t0=Date.now();let user=false;["wheel","touchstart","keydown"].forEach(e=>addEventListener(e,()=>user=true,{once:true,passive:true}));const go=()=>{if(user)return;const el=document.getElementById("reserver");if(el)el.scrollIntoView({block:"start"});if(Date.now()-t0<5000)setTimeout(go,400);};addEventListener("load",go);setTimeout(go,300);})();</script>
+<script type="module" src="https://cdn.rentool.io/widgets/v1/loader.js" data-rentool-channel="stable" crossorigin="anonymous" fetchpriority="high"></script>
 
 <!-- venir -->
 <section style="max-width: 1360px; margin: 0 auto; padding: 100px 40px; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 48px">
