@@ -130,12 +130,18 @@ if (partnerRef) {
   });
 }
 
-const bookingTarget = document.getElementById('reserver');
+const bookingTargets = ['reserver', 'catalogue'].map((id) => document.getElementById(id)).filter(Boolean);
 const mobileBookingLink = document.getElementById('fab-reserver');
-if (bookingTarget && mobileBookingLink && 'IntersectionObserver' in window) {
-  new IntersectionObserver(([entry]) => {
-    mobileBookingLink.classList.toggle('is-hidden', entry.isIntersecting);
-  }, { threshold: 0 }).observe(bookingTarget);
+if (bookingTargets.length && mobileBookingLink && 'IntersectionObserver' in window) {
+  const visibleBookingTargets = new Set();
+  const bookingObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) visibleBookingTargets.add(entry.target);
+      else visibleBookingTargets.delete(entry.target);
+    });
+    mobileBookingLink.classList.toggle('is-hidden', visibleBookingTargets.size > 0);
+  }, { threshold: 0 });
+  bookingTargets.forEach((target) => bookingObserver.observe(target));
 }
 
 // Size the search frame only when Rentool confirms its final bar is ready.

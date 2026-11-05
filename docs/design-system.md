@@ -48,6 +48,8 @@ Les widgets réservent leur espace dès le premier affichage : emplacements fixe
 
 Sur la page Location, les filtres du catalogue ont une largeur maximale de `1280px`, alignée sur la largeur du contenu du héros, via `--rentool-rental-filters-max-width`. Le catalogue d’offres conserve toute la largeur disponible.
 
+La barre compacte de filtres reste sticky sur mobile pendant le défilement du catalogue. Le conteneur principal de la page Location utilise `overflow: clip` pour préserver ce comportement natif : `overflow: hidden` sur un ancêtre le bloque. Le bouton Réserver flottant est masqué tant que la recherche ou le catalogue est visible, pour ne pas recouvrir les contrôles et le panneau des catégories.
+
 Les boutons « Réserver » des cartes de location utilisent le fond orange plein via `reserve-button-style="solid"` sur le widget, en français et en anglais. Le texte des actions orange utilise l’encre sombre via `--rentool-primary-fg` et `--rentool-action-primary-fg` : le blanc sur cet orange manque de contraste.
 
 Limite constatée lors de la revue du 5 novembre 2026 : le bouton « Rechercher » conserve un texte blanc dans le widget actuellement distribué, malgré ces variables correctement héritées. Son contraste sur l’orange est de 2,1:1, contre 8,3:1 avec l’encre sombre. Corriger ce comportement côté Rentool ; ne pas contourner l’encapsulation de ses composants.

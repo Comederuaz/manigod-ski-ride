@@ -120,6 +120,8 @@ a[style*="letter-spacing"],button{white-space:nowrap}
 .rental-hero-offer{font-family:Archivo,sans-serif;font-stretch:125%;font-size:12px;line-height:1.5;letter-spacing:1.5px;color:var(--site-accent-text)}
 .rental-catalog{padding:32px 0 40px;background:var(--site-surface-soft);border-block:1px solid var(--site-border)}
 .rental-catalog__inner{width:100%;max-width:none;margin:0}
+/* Clip page overflow without trapping the widget's native sticky filters. */
+.rental-page .topo{overflow:clip}
 .rental-catalog rentool-rental-widget{display:block;width:100%;max-width:none;--rentool-rental-filters-max-width:1280px}
 .rental-search-frame rentool-rental-search{--rentool-search-height:66px}
 .rental-search-frame rentool-rental-search.is-ready{height:66px}
