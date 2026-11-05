@@ -66,6 +66,7 @@
 </section>
 <script>(()=>{const r=new URLSearchParams(location.search).get("ref");if(r)document.querySelectorAll("rentool-rental-widget, rentool-cart-widget").forEach(w=>w.setAttribute("partner-ref",r));})();</script>
 <script>(()=>{const u=new URL(location.href),q=u.searchParams;if(!q.get("rental-start")){q.set("rental-store","yd79q3we09fc3cbwjsfk85gxtn8g5jxj");q.set("rental-start","2026-12-20");q.set("rental-end","2026-12-25");q.set("rental-period","day");history.replaceState(null,"",u.toString());}})();</script>
+<script>(()=>{if(location.hash!=="#reserver")return;const t0=Date.now();let user=false;["wheel","touchstart","keydown"].forEach(e=>addEventListener(e,()=>user=true,{once:true,passive:true}));const go=()=>{if(user)return;const el=document.getElementById("reserver");if(el)el.scrollIntoView({block:"start"});if(Date.now()-t0<5000)setTimeout(go,400);};addEventListener("load",go);setTimeout(go,300);})();</script>
 <script type="module" src="https://cdn.rentool.io/widgets/v1/loader.js" data-rentool-channel="stable" crossorigin="anonymous" fetchpriority="high"></script>
 <!-- footer -->
 <footer style="border-top: 1px solid #DDE2E1; background: rgba(6,16,18,0.6)">
