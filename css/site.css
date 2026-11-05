@@ -253,3 +253,5 @@ footer{background:#F3F5F4!important;border-top:1px solid #DDE2E1!important}.site
   div[style*="display: grid"]>div[style*="border-top: 1px solid #DDE2E1"][style*="padding-top"]{padding:16px 18px 18px!important;gap:6px!important}
   div[style*="display: grid"]>div[style*="border-top: 1px solid #DDE2E1"][style*="padding-top"]>span[style*="color: #2E8784"]:first-child{display:none}
 }
+
+.topo{background-image:none!important}
