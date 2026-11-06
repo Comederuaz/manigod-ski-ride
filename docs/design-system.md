@@ -50,6 +50,12 @@ Les variables `--site-h1-*` et `--site-h2-font-size` centralisent ces valeurs. N
 
 La barre de recherche utilise une bordure fine et aucune ombre, sur un bloc translucide flouté. Les boutons Panier, Compte et Langue partagent le même espacement à chaque taille d’écran. Le même rayon s’applique aux composants Rentool par leurs variables CSS publiques. Ne pas modifier leur Shadow DOM. Les éléments interactifs conservent un focus visible et une cible tactile suffisante ; la transparence ne doit jamais diminuer la lisibilité.
 
+## En-tête et image Hero
+
+Toutes les pages partagent l’en-tête de l’accueil : blanc à 84 % d’opacité, flou de 14 px avec une saturation de 1.1 et bordure basse discrète. L’en-tête sticky utilise un blanc à 92 % d’opacité pour rester lisible au-dessus du contenu. Ces valeurs sont centralisées dans les variables `--site-header-*`.
+
+Chaque section `.hero` commence derrière l’en-tête, sur ordinateur et mobile. La hauteur réelle de l’en-tête est transmise par `js/site-header.js` à la variable racine `--site-header-height`, utilisée pour le chevauchement et pour la hauteur de la photo. Les pages sans Hero conservent leur fond clair et le même en-tête vitré, sans ajout de photo. La navigation déroulante et le comportement sticky sont communs à toutes les pages.
+
 ## Mouvement
 
 Les transitions servent à signaler un changement d’état, par exemple l’entrée de l’en-tête lors d’une remontée. La photo d’accueil a un mouvement lent. Tout mouvement décoratif est désactivé avec `prefers-reduced-motion: reduce`.

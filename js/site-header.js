@@ -65,7 +65,7 @@ document.querySelectorAll('.site-header').forEach((header) => {
   let scheduled = false;
 
   function syncHeaderHeight() {
-    header.style.setProperty('--site-header-height', `${header.offsetHeight}px`);
+    document.documentElement.style.setProperty('--site-header-height', `${header.offsetHeight}px`);
     if (header.classList.contains('is-sticky')) spacer.style.height = `${header.offsetHeight}px`;
   }
 
