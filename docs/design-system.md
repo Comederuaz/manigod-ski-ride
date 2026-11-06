@@ -26,6 +26,20 @@ Le menu Services utilise des icônes encre sur fond doux, des descriptions secon
 
 Les photos peuvent se fondre dans le blanc par dégradé. Une surface posée sur une photo utilise un blanc translucide et un flou léger, avec un texte sombre lisible.
 
+## Typographie des titres
+
+Les 38 pages françaises et anglaises partagent les règles de `css/site.css`. Les titres utilisent Archivo, une chasse de 125 % et une graisse de 800.
+
+| Élément | Ordinateur et tablette (> 760 px) | Mobile (≤ 760 px) |
+| --- | --- | --- |
+| H1 | `clamp(34px, 3.6vw, 54px)` | `26px` |
+| H2 | `35px` | `35px` |
+| Surtitre du H1 | `15px`, graisse 400 | `11px`, graisse 400 |
+
+Le H1 reprend le modèle de l’accueil : interligne de `0.98` sur ordinateur et `1.05` sur mobile, espacement des lettres de `-1.5px` puis `-0.5px`. Les H1 avec surtitre utilisent `.page-title--stacked`, `.page-title__eyebrow` et `.page-title__text`, avec un écart de 22 px puis 14 px sur mobile. Les H1 sans surtitre suivent la même taille principale. Les H2 ont un interligne de `1.15` et restent à 35 px sur tous les formats.
+
+Les variables `--site-h1-*` et `--site-h2-font-size` centralisent ces valeurs. Ne pas ajouter de taille ou d’interligne inline sur les titres : les textes, italiques et retours à la ligne peuvent varier sans créer de nouvelle échelle typographique. Les mots très longs peuvent se couper pour éviter un débordement sur petit écran.
+
 ## Arrondis et composants
 
 | Élément | Rayon |
