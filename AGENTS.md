@@ -7,7 +7,7 @@ Site statique de Manigod Ski Ride, en français à la racine et en anglais dans 
 ## Structure
 
 - Pages HTML autonomes ; styles communs dans `css/site.css` ; interactions communes de l’en-tête dans `js/site-header.js`.
-- Utiliser les couleurs, arrondis et règles d’interface de `docs/design-system.md` pour les nouveaux composants.
+- Lire `docs/design-system.md` avant toute évolution visuelle et réutiliser ses couleurs, sa typographie et ses composants. Maintenir ce guide et les styles communs dans le même changement lorsqu’une règle évolue ; documenter les exceptions.
 - Chaque modification d’un parcours public doit être vérifiée dans les deux langues. Garder des chemins relatifs qui fonctionnent avec `python -m http.server`.
 - Ne pas introduire de framework ou de compilation sans besoin démontré. Éviter d’ajouter des styles inline pour les composants réutilisés.
 
@@ -18,6 +18,7 @@ Site statique de Manigod Ski Ride, en français à la racine et en anglais dans 
 - Utiliser les composants Rentool pour la recherche, le catalogue, le panier et le compte. Ne pas recréer la réservation, le paiement, l’authentification ou les états de chargement des widgets.
 - Conserver les attributs et jetons publics des snippets du même site ; ne jamais placer de credential de déploiement ou de données privées dans les pages. Charger le bootstrap Rentool une seule fois par page et placer les métadonnées Rentool dans le `<head>`.
 - Ne pas imposer de dates de location dans le code. Vérifier les capacités du magasin et la langue anglaise avec la configuration Rentool avant de publier.
+- La page Contact utilise le composant indépendant `rentool-contact-widget` et la clé réelle du formulaire standard. Lire `rentool://docs/contact.md` ; ne pas recréer le formulaire ni envoyer de message réel pendant les vérifications sans instruction explicite.
 
 ## Vérification et publication
 
