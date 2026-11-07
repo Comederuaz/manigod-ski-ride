@@ -127,8 +127,6 @@ Utiliser les composants officiels pour recherche, catalogue, panier et compte. L
 
 Les sélections sombres utilisent `--rentool-secondary`, `--rentool-secondary-fg`, `--rentool-control-active` et `--rentool-control-active-fg`, centralisés dans la feuille commune. Les cartes utilisent `reserve-button-style="solid"` : fond orange et texte encre, via `--rentool-primary-fg` et `--rentool-action-primary-fg`.
 
-Les boutons du widget Location reprennent Archivo, une taille de 13 px et une graisse de 700 via `--rentool-button-font`, `--rentool-button-font-size` et `--rentool-button-font-weight`. Leurs dimensions et états restent natifs. La version du widget vérifiée le 7 novembre 2026 ne propose ni variable de casse, de chasse ou d’espacement des lettres, ni part réexportée pour cibler le bouton Réserver depuis le site. Les majuscules et la chasse de 125 % avec espacement de 1,5 px des boutons éditoriaux restent donc à exposer côté Rentool pour une correspondance complète ; ne pas appliquer ces propriétés au catalogue entier ni modifier son Shadow DOM.
-
 ### Recherche et stabilité du chargement
 
 La barre de recherche a une bordure fine `--site-control-border`, sans ombre visible. Son cadre réserve au moins 70 px dès le premier affichage. La barre définitive mesure 66 px, puis 70 px lorsque son conteneur mesure au plus 520 px. La hauteur finale n’est appliquée qu’après `rentool-ready`, pour laisser les erreurs initiales visibles.

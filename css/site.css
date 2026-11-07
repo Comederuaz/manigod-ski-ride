@@ -140,8 +140,6 @@ h2{font-size:var(--site-h2-font-size);line-height:1.15;letter-spacing:0}
 /* Clip page overflow without trapping the widget's native sticky filters. */
 .rental-page .topo{overflow:clip}
 .rental-catalog rentool-rental-widget{display:block;width:100%;max-width:none;--rentool-rental-filters-max-width:1280px}
-/* Public button typography follows the site's orange booking actions. */
-rentool-rental-widget{--rentool-button-font:Archivo,system-ui,sans-serif;--rentool-button-font-size:13px;--rentool-button-font-weight:700}
 .rental-search-frame rentool-rental-search{--rentool-search-height:66px}
 .rental-search-frame rentool-rental-search.is-ready{height:66px}
 @container (max-width:520px){
