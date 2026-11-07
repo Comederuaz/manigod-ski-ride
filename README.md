@@ -11,7 +11,7 @@ Site vitrine statique du magasin Manigod Ski Ride au Col de la Croix-Fry. Il pr�
 - `images/` : photos, logos et illustrations.
 - `sitemap.xml` et `robots.txt` : référencement, actuellement configuré pour une version de test non indexée.
 
-Pour consulter le site localement, lancer `python -m http.server 8765` dans ce dossier, puis ouvrir `http://127.0.0.1:8765/`.
+Pour consulter le site localement, lancer `python -m http.server 5500 --bind 127.0.0.1` dans ce dossier, puis ouvrir `http://127.0.0.1:5500/`. Cette origine exacte est déclarée pour le développement Rentool ; un autre hôte ou port doit aussi être déclaré pour accéder au formulaire avant publication.
 
 ## Parcours de location
 
@@ -23,7 +23,11 @@ La configuration et les snippets du MCP Rentool sont la référence pour l’int
 
 Les pages `contact.html` et `en/contact.html` regroupent le formulaire, les coordonnées, les horaires et les informations d’accès. Elles sont liées depuis tous les pieds de page et réutilisent les visuels existants.
 
-Le composant officiel `rentool-contact-widget` utilise le site public et la clé `contact` fournie par le propriétaire. Sa configuration doit être celle d’un formulaire standard (`templateKind: "contact"`), activé dans Rentool. Le service public exige aussi un site publié. Lors de l’intégration du 6 novembre 2026, l’API de configuration répondait 404 et le MCP indiquait qu’aucune version n’était publiée ; vérifier sa disponibilité et les libellés FR/EN lors de la mise en service. Aucun envoi réel n’est effectué pour les tests.
+Le composant officiel `rentool-contact-widget` utilise la clé `contact`. Elle est désormais découvrable dans `forms` de `rentool://site/config`, avec `templateKind: "contact"` et son `configPath`. L’outil MCP `read_site_api`, chemin `forms/contact`, permet de lire la configuration avant publication, sans credential dans le site ni en-tête Origin fourni par l’agent.
+
+Le navigateur peut lui aussi charger le formulaire avant publication depuis une origine de développement explicitement déclarée. La configuration lue le 7 novembre 2026 autorise `http://127.0.0.1:5500` et `https://comederuaz.github.io`. Respecter exactement l’origine déclarée, y compris le protocole, l’hôte et le port. Les soumissions depuis ces origines sont réelles.
+
+Vérification du 7 novembre 2026 : formulaire standard activé, cinq champs attendus, libellés français et anglais, lecture MCP réussie et configuration HTTP 200 avec CORS sur les deux origines. Le formulaire réel s’affiche sur les pages FR/EN à 320, 390 et 1440 px ; les champs obligatoires et le téléphone facultatif ont été vérifiés sans simulation de configuration. Aucun message n’a été envoyé : la réception et la livraison d’e-mail ne sont pas validées par ces contrôles.
 
 ## Méthode de travail
 

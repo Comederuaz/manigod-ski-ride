@@ -19,6 +19,7 @@ Site statique de Manigod Ski Ride, en français à la racine et en anglais dans 
 - Conserver les attributs et jetons publics des snippets du même site ; ne jamais placer de credential de déploiement ou de données privées dans les pages. Charger le bootstrap Rentool une seule fois par page et placer les métadonnées Rentool dans le `<head>`.
 - Ne pas imposer de dates de location dans le code. Vérifier les capacités du magasin et la langue anglaise avec la configuration Rentool avant de publier.
 - La page Contact utilise le composant indépendant `rentool-contact-widget` et la clé réelle du formulaire standard. Lire `rentool://docs/contact.md` ; ne pas recréer le formulaire ni envoyer de message réel pendant les vérifications sans instruction explicite.
+- Découvrir les formulaires activés dans `forms` de `rentool://site/config`, puis lire leur configuration avec `read_site_api` (`forms/{formKey}`). Pour les tests navigateur avant publication, utiliser une origine déclarée dans `developmentOrigins` ; l’origine locale actuelle est `http://127.0.0.1:5500`. Ne jamais copier le credential MCP dans le code du site.
 
 ## Vérification et publication
 
