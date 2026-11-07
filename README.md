@@ -7,7 +7,7 @@ Site vitrine statique du magasin Manigod Ski Ride au Col de la Croix-Fry. Il pr�
 - 20 pages françaises à la racine ; leurs 20 versions anglaises dans `en/`.
 - `css/site.css` : styles communs et adaptations par taille d’écran.
 - [`docs/design-system.md`](docs/design-system.md) : référence des couleurs, titres, composants, en-têtes, Heroes et comportements sur ordinateur et mobile.
-- `js/site-header.js` : menu Services, menu mobile et contexte partenaire public.
+- `js/site-header.js` : menu Services, menu mobile et conservation du contexte de recherche dans les liens internes FR/EN.
 - `images/` : photos, logos et illustrations.
 - `sitemap.xml` et `robots.txt` : référencement, actuellement configuré pour une version de test non indexée.
 

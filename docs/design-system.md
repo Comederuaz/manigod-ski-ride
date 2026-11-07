@@ -119,6 +119,7 @@ Utiliser les composants officiels pour recherche, catalogue, panier et compte. L
 
 - L’accueil contient uniquement la recherche de location. Sa destination est `location.html`, sans ancre : les dates sont transmises et la page s’ouvre en haut.
 - La page Location contient la recherche dans son Hero, puis le catalogue avec ses filtres immédiatement en dessous. `search-params` conserve la lecture du magasin et des dates dans l’URL.
+- Les liens internes entre pages, dont Location de ski et le changement de langue, conservent le contexte appliqué de l’URL (`rental-store`, `rental-start`, `rental-end`, `rental-period` et `ref`). Le script commun relit ce contexte à l’activation du lien, car la recherche peut modifier l’URL sans rechargement. Les paramètres propres à la destination et ses ancres restent conservés ; aucun contexte n’est mémorisé en dehors de l’URL ni transmis aux liens externes.
 - Les liens qui invitent explicitement à rejoindre la réservation peuvent utiliser `#reserver`.
 - La largeur maximale des filtres est `1280px`, via `--rentool-rental-filters-max-width`. Les offres restent sur toute la largeur de la fenêtre.
 - La barre compacte des filtres est sticky sur mobile. Le conteneur de la page Location utilise `overflow: clip` : `overflow: hidden` sur un ancêtre bloque ce comportement natif.

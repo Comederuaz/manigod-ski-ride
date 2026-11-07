@@ -1,3 +1,36 @@
+// Keep the applied Rentool search when navigating between static FR/EN pages.
+// Read at activation time too: the search widget updates the URL with replaceState.
+const siteRoot = new URL('../', document.currentScript.src);
+const rentalContextKeys = ['rental-store', 'rental-start', 'rental-end', 'rental-period', 'ref'];
+const originalPageLinks = new WeakMap();
+
+function syncRentalContext(link) {
+  if (!originalPageLinks.has(link)) originalPageLinks.set(link, link.getAttribute('href'));
+  const href = originalPageLinks.get(link);
+  if (!href || href.startsWith('#') || link.hasAttribute('download')) return;
+
+  const destination = new URL(href, window.location.href);
+  if (destination.origin !== siteRoot.origin || !destination.pathname.startsWith(siteRoot.pathname)
+      || !destination.pathname.endsWith('.html')) return;
+
+  const context = new URLSearchParams(window.location.search);
+  rentalContextKeys.forEach((key) => {
+    const value = context.get(key);
+    if (value) destination.searchParams.set(key, value);
+  });
+  // Preserve relative paths, destination parameters and explicit booking anchors.
+  link.setAttribute('href', `${href.split(/[?#]/)[0]}${destination.search}${destination.hash}`);
+}
+
+document.querySelectorAll('a[href]').forEach(syncRentalContext);
+['pointerdown', 'focusin', 'click', 'auxclick', 'contextmenu'].forEach((type) => {
+  document.addEventListener(type, (event) => {
+    const link = event.target.closest?.('a[href]');
+    if (link) syncRentalContext(link);
+  }, { capture: true });
+});
+window.addEventListener('pageshow', () => document.querySelectorAll('a[href]').forEach(syncRentalContext));
+
 // Shared navigation and public partner context for the static FR/EN pages.
 document.querySelectorAll('.site-header').forEach((header) => {
   const burger = header.querySelector('.burger');
