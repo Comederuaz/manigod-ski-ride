@@ -10,6 +10,7 @@
   --site-font-family:Archivo,system-ui,sans-serif;
   --site-ink:#0C1C1F;
   --site-accent:#F0A06A;
+  --site-discount:#B42318;
   --site-surface:#FFFFFF;
   --site-surface-soft:#F3F5F4;
   --site-border:#DDE2E1;
@@ -246,7 +247,7 @@ rentool-rental-search::part(dates-trigger),
   letter-spacing:-.5px;
   color:var(--site-ink);
 }
-:is(rentool-rental-widget,rentool-cart-widget)::part(discount-note){box-sizing:border-box;padding:5px 8px;border:1px solid var(--site-accent);border-radius:var(--site-radius-control);background:var(--site-accent);color:var(--site-ink);box-shadow:none;font-family:var(--site-font-family);font-size:12px;font-weight:700;line-height:1.2;letter-spacing:.2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+:is(rentool-rental-widget,rentool-cart-widget)::part(discount-note){box-sizing:border-box;padding:5px 8px;border:1px solid var(--site-discount);border-radius:var(--site-radius-control);background:var(--site-discount);color:var(--site-surface);box-shadow:none;font-family:var(--site-font-family);font-size:14px;font-weight:800;line-height:1.2;letter-spacing:.2px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .rental-catalog rentool-rental-widget::part(media-details-button){
   color:var(--site-accent-text);
   font-family:var(--site-font-family);

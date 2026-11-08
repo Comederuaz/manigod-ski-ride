@@ -27,6 +27,7 @@ Police : Archivo, centralisée dans `--site-font-family`. Titres affirmés, text
 | `--site-border` | `#DDE2E1` | Séparateurs et contours de panneaux |
 | `--site-control-border` | `#C5CFCE` | Contours des champs et de la recherche |
 | `--site-accent` | `#F0A06A` | Boutons principaux et repères décoratifs |
+| `--site-discount` | `#B42318` | Fond et contour des badges de remise, avec du texte blanc |
 | `--site-accent-text` | `#C8632A` | Liens, navigation active, promotions et flèches |
 | `--site-accent-hover` | `#F4B587` | Survol d’un bouton orange |
 | `--site-focus` | `var(--site-accent-text)` | Indicateur de focus clavier |
@@ -159,7 +160,7 @@ Les finitions propres aux cartes sont définies dans `css/site.css`, sous `.rent
 | Titres du widget, dont les gammes (`text-title`) | Archivo, chasse 125 %, 20 px, graisse 800, interligne 1,2, espacement 0,3 px, majuscules, encre |
 | Texte courant | Archivo 14 px, interligne 1,5 ; texte secondaire `--site-text-secondary` |
 | Prix (`amount`) | Archivo, graisse 800, espacement −0,5 px, encre ; taille et unité natives |
-| Badge de remise (`discount-note`) | Orange/encre, contour orange, angles droits, Archivo 12 px, graisse 700, interligne 1,2, espacement 0,2 px, retraits 5 px / 8 px, sans ombre |
+| Badge de remise (`discount-note`) | Rouge de remise/blanc, contour rouge, angles droits, Archivo 14 px, graisse 800, interligne 1,2, espacement 0,2 px, retraits 5 px / 8 px, sans ombre |
 | Photos et détails (`media-details-button`) | Archivo, graisse 600, accent texte |
 | Réserver (`reserve-button`) | Action principale commune et flèche décorative ; espacement 1,5 px ; hauteur minimale 48 px |
 
