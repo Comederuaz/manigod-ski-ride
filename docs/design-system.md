@@ -15,7 +15,7 @@ Pour toute évolution visuelle, réutiliser les composants et les variables exis
 
 ## Identité et couleurs
 
-Police : Archivo. Titres affirmés, texte courant lisible et contraste conservé sur les photos. Les textes et informations commerciales du client restent la référence éditoriale.
+Police : Archivo, centralisée dans `--site-font-family`. Titres affirmés, texte courant lisible et contraste conservé sur les photos. Les textes et informations commerciales du client restent la référence éditoriale.
 
 | Variable CSS | Valeur | Usage |
 | --- | --- | --- |
@@ -127,20 +127,42 @@ Utiliser les composants officiels pour recherche, catalogue, panier et compte. L
 
 Les sélections sombres utilisent `--rentool-secondary`, `--rentool-secondary-fg`, `--rentool-control-active` et `--rentool-control-active-fg`, centralisés dans la feuille commune. Les cartes utilisent `reserve-button-style="solid"` : fond orange et texte encre, via `--rentool-primary-fg` et `--rentool-action-primary-fg`.
 
+### Hiérarchie commune à tous les widgets
+
+La feuille commune couvre Recherche, Location, Panier et Compte, y compris leurs panneaux, leurs fenêtres et leurs composants imbriqués. La base typographique est également transmise au formulaire Contact, qui conserve son thème indépendant. Utiliser les rôles `--rentool-type-*` et les parts publiques du contrat v1, sans modifier les éléments internes en JavaScript.
+
+| Famille | Règle commune |
+| --- | --- |
+| Titres | Archivo 20 px, chasse 125 %, graisse 800, interligne 1,2, espacement 0,3 px, majuscules |
+| Descriptions et textes courants | Archivo 14 px, interligne 1,5, casse normale ; textes secondaires 13 px et couleur secondaire |
+| Libellés et indications compactes | Archivo 12 px minimum ; libellés en graisse 700, sans agrandir les icônes ou les jours du calendrier |
+| Actions principales | Orange/encre, Archivo 13 px, chasse 125 %, graisse 700, majuscules, espacement 1 px, hauteur minimale 48 px |
+| Actions secondaires avec contour | Encre, bordure grise, Archivo 12 px, chasse 115 %, graisse 700, majuscules, espacement 0,6 px |
+| Actions discrètes et choix compacts | Casse normale, graisse 600 ; les filtres, accessoires, étapes et onglets ne reprennent pas la grande typographie des appels à l’action |
+| Champs de saisie | Archivo 16 px, graisse 400, casse normale, angles droits ; la taille évite le zoom automatique de saisie sur mobile |
+| Sélections | Encre/blanc ; les étapes actives et accessoires conservent leurs états natifs |
+| Focus | Contour de 2 px dans l’accent texte avec retrait extérieur de 3 px |
+
+À ≤ 380 px, les actions principales passent à 12 px, chasse normale et espacement 0,6 px pour conserver les libellés longs. Le pied de panier mobile réserve au moins 88 px au total, sans réduire sa zone à cause du bouton de validation. La hauteur tactile de 48 px est conservée.
+
+Les intitulés des filtres Matériel et Type utilisent des majuscules espacées ; leurs choix restent en casse normale. Les chaussures, casques et options utilisent des noms à 14 px et des suppléments à 12 px. Les boutons Panier et Compte de l’en-tête gardent une surface blanche et un texte compact de 12 px en casse normale ; le compteur utilise orange/encre. Les icônes et les libellés internes des choix sélectionnés héritent du premier plan de leur contrôle pour conserver leur contraste sur une surface sombre, notamment dans le calendrier et les sélecteurs numériques.
+
+Les mêmes familles d’actions s’appliquent à Rechercher, Suivant, Ajouter au panier, Valider mon panier et Continuer. Seul Réserver reçoit une flèche décorative. Les couleurs d’erreur, de succès, d’indisponibilité et les opacités de désactivation restent fonctionnelles et natives. Les jours du calendrier, les cases à cocher, les conditions de vente et les commandes de fermeture conservent leurs dimensions et leurs comportements. Les interfaces de paiement dans une iframe externe restent pilotées par le prestataire ; le CSS du site ne traverse pas cette iframe.
+
 ### Cartes du catalogue
 
-L’habillage des cartes est défini dans `css/site.css`, sous `.rental-catalog`, avec les variables et les parts publiques du contrat de présentation Rentool v1 (`rentool://docs/widget-styling.md`, disponible le 8 novembre 2026). Il s’applique aux pages Location FR/EN, sans injection de styles dans le Shadow DOM ni modification des libellés métier.
+Les finitions propres aux cartes sont définies dans `css/site.css`, sous `.rental-catalog`, en complément du thème commun, avec les variables et les parts publiques du contrat de présentation Rentool v1 (`rentool://docs/widget-styling.md`, disponible le 8 novembre 2026). Il s’applique aux pages Location FR/EN, sans injection de styles dans le Shadow DOM ni modification des libellés métier.
 
 | Élément | Présentation |
 | --- | --- |
 | Carte (`card`) | Surface blanche, contour `--site-border`, angles droits |
 | Titres du widget, dont les gammes (`text-title`) | Archivo, chasse 125 %, 20 px, graisse 800, interligne 1,2, espacement 0,3 px, majuscules, encre |
-| Texte courant | Archivo ; texte secondaire `--site-text-secondary` |
+| Texte courant | Archivo 14 px, interligne 1,5 ; texte secondaire `--site-text-secondary` |
 | Prix (`amount`) | Archivo, graisse 800, espacement −0,5 px, encre ; taille et unité natives |
 | Photos et détails (`media-details-button`) | Archivo, graisse 600, accent texte |
-| Réserver (`reserve-button`) | Fond orange, texte encre, Archivo 13 px, chasse 125 %, graisse 700, interligne 1,4, espacement 1,5 px, majuscules et flèche décorative ; hauteur minimale 48 px |
+| Réserver (`reserve-button`) | Action principale commune et flèche décorative ; espacement 1,5 px ; hauteur minimale 48 px |
 
-Le survol du bouton utilise `--site-accent-hover` ; le focus conserve un contour visible. Ces styles ciblent les parts précises des cartes : les filtres, les boutons du panier et du compte ainsi que les textes descriptifs ne sont pas mis en majuscules. Les états désactivés et de chargement restent natifs. Les dimensions, le carrousel, les disponibilités et les choix d’accessoires restent gérés par Rentool.
+Le survol du bouton utilise `--site-accent-hover` ; le focus conserve un contour visible. La flèche cible uniquement la réservation. Les boutons de choix, les actions d’en-tête et les descriptions restent en casse normale ; les titres de filtres et les actions principales suivent la hiérarchie commune. Les états désactivés et de chargement restent natifs. Les dimensions, le carrousel, les disponibilités et les choix d’accessoires restent gérés par Rentool.
 
 ### Recherche et stabilité du chargement
 
@@ -175,6 +197,6 @@ Les transitions signalent un changement d’état : entrée sticky de 0,34 s et 
 
 Vérifier les pages concernées dans les deux langues sur ordinateur et mobile. Lors d’un changement de règle commune aux en-têtes ou aux titres, contrôler également sa propagation aux autres pages, le focus clavier, les menus, l’absence de débordement et les positions avant/après chargement des widgets.
 
-## Limite suivie côté Rentool
+## Contraste des actions Rentool
 
-Lors des vérifications du 5 novembre 2026, le bouton Rechercher conservait un texte blanc malgré les variables de premier plan héritées. Son contraste sur l’orange était de 2,1:1, contre 8,3:1 avec l’encre sombre utilisée par les boutons Réserver. Revalider le widget distribué lorsque ce comportement est corrigé côté Rentool ; conserver son encapsulation.
+Le texte des actions orange utilise l’encre sombre, y compris Rechercher. Le contrat public de présentation v1 permet de définir ce premier plan sur `button-primary` et de réutiliser les variables du site. Conserver ce contraste lors des mises à jour du widget ; les textes, les prix et les indications de durée gardent leur hiérarchie propre.
