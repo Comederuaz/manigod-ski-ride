@@ -140,6 +140,7 @@ rentool-cart-widget::part(cart-step){font-family:var(--site-font-family);font-si
 :is(rentool-rental-widget,rentool-cart-widget)::part(member-name),
 :is(rentool-rental-widget,rentool-cart-widget)::part(option-label),
 :is(rentool-rental-widget,rentool-cart-widget)::part(modal-option){font-family:var(--site-font-family);font-size:14px;font-weight:600;line-height:1.4;text-transform:none}
+:is(rentool-rental-widget,rentool-cart-widget)::part(member):hover{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--rentool-text,var(--site-ink)) 35%,transparent)}
 :is(rentool-rental-widget,rentool-cart-widget)::part(member-price){font-family:var(--site-font-family);font-size:12px;font-weight:600;color:var(--site-text-secondary)}
 @media (prefers-reduced-motion:reduce){
   :is(rentool-rental-widget,rentool-cart-widget)::part(nav-badge-indicator){transition:none}

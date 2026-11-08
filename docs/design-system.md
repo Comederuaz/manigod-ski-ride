@@ -150,6 +150,8 @@ Les intitulés des filtres Matériel et Type utilisent des majuscules espacées 
 
 Les mêmes familles d’actions s’appliquent à Rechercher, Suivant, Ajouter au panier, Valider mon panier et Continuer. Seul Réserver reçoit une flèche décorative. Les couleurs d’erreur, de succès, d’indisponibilité et les opacités de désactivation restent fonctionnelles et natives. Les jours du calendrier, les cases à cocher, les conditions de vente et les commandes de fermeture conservent leurs dimensions et leurs comportements. Les interfaces de paiement dans une iframe externe restent pilotées par le prestataire ; le CSS du site ne traverse pas cette iframe.
 
+Au survol, les lignes de choix des chaussures, casques et options du pack (`member`, y compris dans les fenêtres de Location et Panier) reprennent la couleur du contour natif des catégories : encre à 35 % d’opacité. Le contour intérieur de 1 px remplace l’ombre native trop claire, sans modifier les dimensions des lignes ni les cases à cocher. Les états de sélection et de focus restent natifs.
+
 ### Cartes du catalogue
 
 Les finitions propres aux cartes sont définies dans `css/site.css`, sous `.rental-catalog`, en complément du thème commun, avec les variables et les parts publiques du contrat de présentation Rentool v1 (`rentool://docs/widget-styling.md`, disponible le 8 novembre 2026). Il s’applique aux pages Location FR/EN, sans injection de styles dans le Shadow DOM ni modification des libellés métier.
