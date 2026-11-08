@@ -120,13 +120,18 @@ h2{font-size:var(--site-h2-font-size);line-height:1.15;letter-spacing:0}
 :is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(surface-modal){background:var(--site-surface);border-radius:var(--site-radius-dialog)}
 :is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(link){color:var(--site-accent-text);text-underline-offset:3px}
 
-/* Compact choices stay in sentence case; typography must not inflate their hit areas. */
+/* Category choices need more prominence than compact step labels. */
+:is(rentool-rental-widget,rentool-cart-widget)::part(nav-badges){flex-wrap:wrap;gap:20px 28px}
+:is(rentool-rental-widget,rentool-cart-widget)::part(nav-badge-indicator){display:none}
 :is(rentool-rental-widget,rentool-cart-widget)::part(nav-badge),
-:is(rentool-rental-widget,rentool-cart-widget)::part(category-sheet-option),
+:is(rentool-rental-widget,rentool-cart-widget)::part(category-sheet-option){box-sizing:border-box;font-family:var(--site-font-family);font-size:15px;font-weight:600;line-height:1.35;letter-spacing:.1px;text-transform:none;min-height:44px;padding:10px 18px}
+:is(rentool-rental-widget,rentool-cart-widget)::part(nav-badge state-active){background:var(--site-ink);color:var(--site-surface)}
+:is(rentool-rental-widget,rentool-cart-widget)::part(category-sheet-option){min-height:48px}
+:is(rentool-rental-widget,rentool-cart-widget)::part(mobile-category-summary){font-size:15px;font-weight:600}
 :is(rentool-rental-widget,rentool-cart-widget)::part(modal-step),
 rentool-cart-widget::part(cart-step){font-family:var(--site-font-family);font-size:13px;font-weight:600;letter-spacing:.1px;text-transform:none}
 :is(rentool-rental-widget,rentool-cart-widget)::part(category-filter-title),
-:is(rentool-rental-widget,rentool-cart-widget)::part(category-sheet-group-title){font-family:var(--site-font-family);font-size:12px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--site-text-secondary)}
+:is(rentool-rental-widget,rentool-cart-widget)::part(category-sheet-group-title){font-family:var(--site-font-family);font-size:13px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;color:var(--site-text-secondary)}
 :is(rentool-rental-widget,rentool-cart-widget)::part(member-name),
 :is(rentool-rental-widget,rentool-cart-widget)::part(option-label),
 :is(rentool-rental-widget,rentool-cart-widget)::part(modal-option){font-family:var(--site-font-family);font-size:14px;font-weight:600;line-height:1.4;text-transform:none}
