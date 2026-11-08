@@ -166,6 +166,8 @@ Le survol du bouton utilise `--site-accent-hover` ; le focus conserve un contour
 
 ### Recherche et stabilité du chargement
 
+La barre de recherche réserve une colonne de 208 px à son action, soit un bouton Rechercher de 192 px avec ses retraits natifs. La grille s’adapte à la présence ou non du champ magasin via les parts `bar` et `bar without-store-selector` ; le champ de dates utilise la place restante. Le bouton public est ancré dans `submit-wrap` pour que la largeur fixe de son hôte interne ne coupe ni son texte ni sa zone cliquable. Dans cette colonne uniquement, le libellé visible reprend l’`aria-label` natif du bouton via `::after`, et le `search-label` éventuel est masqué pour éviter un doublon. Cela conserve le texte localisé même lorsque Rentool choisit son rendu à icône seule. La largeur totale de la barre, sa hauteur et les contrôles mobiles natifs sont conservés ; le bouton du pied de calendrier ne reçoit pas cette largeur ni ce libellé supplémentaire.
+
 La barre de recherche a une bordure fine `--site-control-border`, sans ombre visible. Son cadre réserve au moins 70 px dès le premier affichage. La barre définitive mesure 66 px, puis 70 px lorsque son conteneur mesure au plus 520 px. La hauteur finale n’est appliquée qu’après `rentool-ready`, pour laisser les erreurs initiales visibles.
 
 Les emplacements Panier et Compte réservent respectivement 164 et 128 px sur ordinateur, puis 42 px chacun à ≤ 760 px. Leur espace existe avant le chargement du module.
