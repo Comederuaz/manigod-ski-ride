@@ -106,13 +106,9 @@ h2{font-size:var(--site-h2-font-size);line-height:1.15;letter-spacing:0}
 :is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(text-title){font-family:var(--site-font-family);font-stretch:125%;font-size:20px;font-weight:800;line-height:1.2;letter-spacing:.3px;text-transform:uppercase;color:var(--site-ink)}
 :is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-primary){min-height:48px;border-radius:var(--site-radius-control);font-family:var(--site-font-family);font-stretch:125%;font-size:13px;font-weight:700;line-height:1.4;letter-spacing:1px;text-transform:uppercase;background:var(--site-accent);border-color:var(--site-accent);color:var(--site-ink)}
 :is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-primary):hover:not(:disabled){background:var(--site-accent-hover);border-color:var(--site-accent-hover)}
-/* Give the search action 192px plus its native 16px inset. */
-rentool-rental-search::part(bar){grid-template-columns:minmax(0,1fr) minmax(0,1fr) 208px}
-rentool-rental-search::part(bar without-store-selector){grid-template-columns:minmax(0,1fr) 208px}
-rentool-rental-search::part(submit-wrap){position:relative;min-block-size:48px;--site-search-action-width:192px;--site-search-action-position:absolute;--site-search-action-inset:8px;--site-search-action-label-display:inline}
-rentool-rental-search::part(button-primary){inline-size:var(--site-search-action-width,100%);position:var(--site-search-action-position,static);inset:var(--site-search-action-inset,auto)}
-rentool-rental-search::part(search-label){display:none}
-rentool-rental-search::part(button-primary)::after{content:attr(aria-label);display:var(--site-search-action-label-display,none)}
+/* Fit the label while keeping Rentool's animated expanded/compact states. */
+rentool-rental-search::part(submit-wrap){--rentool-button-padding-x:6px;--site-search-action-stretch:100%}
+rentool-rental-search::part(button-primary){font-stretch:var(--site-search-action-stretch,125%)}
 :is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-secondary),
 :is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-outline){font-family:var(--site-font-family);font-stretch:115%;font-size:12px;font-weight:700;line-height:1.4;letter-spacing:.6px;text-transform:uppercase;color:var(--site-ink);border-color:var(--site-control-border);border-radius:var(--site-radius-control)}
 :is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-ghost){font-family:var(--site-font-family);font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--site-ink)}
