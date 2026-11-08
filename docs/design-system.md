@@ -157,7 +157,7 @@ Les finitions propres aux cartes sont définies dans `css/site.css`, sous `.rent
 | Élément | Présentation |
 | --- | --- |
 | Carte (`card`) | Surface blanche, contour `--site-border`, angles droits |
-| Titres des cartes (`card` → `text-title`) | Archivo, chasse 125 %, 18 px, graisse 800, interligne 1,2, espacement 0,3 px, majuscules, encre ; les autres titres de widgets gardent leur échelle commune |
+| Titres des cartes (`card` → `text-title`) | Archivo, chasse 125 %, 17 px, graisse 800, interligne 1,2, espacement 0,3 px, majuscules, encre ; les autres titres de widgets gardent leur échelle commune |
 | Description du pack (`desc`) | Archivo 14 px, interligne 1,4 ; texte secondaire `--site-text-secondary` |
 | Prix (`amount`) | Archivo, graisse 800, espacement −0,5 px, encre ; taille et unité natives |
 | Badge de remise (`discount-note`) | Rouge de remise/blanc, contour rouge, angles droits, Archivo 14 px, graisse 800, interligne 1,2, espacement 0,2 px, retraits 5 px / 8 px, sans ombre |

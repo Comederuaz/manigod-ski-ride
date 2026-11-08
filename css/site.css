@@ -236,7 +236,7 @@ rentool-rental-search::part(dates-trigger),
 .rental-catalog rentool-rental-widget{display:block;width:100%;max-width:none;--rentool-rental-filters-max-width:1280px}
 
 /* Rental cards use the public Rentool presentation contract (CSS parts v1). */
-:is(rentool-rental-widget,rentool-cart-widget)::part(card){--rentool-type-title-font-size:18px}
+:is(rentool-rental-widget,rentool-cart-widget)::part(card){--rentool-type-title-font-size:17px}
 :is(rentool-rental-widget,rentool-cart-widget)::part(desc){line-height:1.4}
 .rental-catalog rentool-rental-widget::part(card){
   border-color:var(--site-border);
