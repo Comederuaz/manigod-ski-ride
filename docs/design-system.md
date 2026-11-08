@@ -105,6 +105,8 @@ Chaque section `.hero` commence derrière l’en-tête, sur ordinateur et mobile
 
 Les photos existantes du site sont réutilisées avec un texte alternatif pertinent. Leurs cadrages restent propres à chaque page, avec une source mobile lorsqu’elle existe. Les dégradés fondent la photo dans le blanc pour conserver la lisibilité du titre.
 
+L’export Rentool conserve les originaux dans le dépôt et produit des WebP pour respecter les limites de transfert : photos limitées à 1440 px sur leur plus grand côté, qualité 70 ; PNG convertis sans perte. Les cadrages et les textes alternatifs sont conservés. Voir la préparation de l’export dans le [README](../README.md).
+
 Le contenu du Hero est limité à 1360 px avec un retrait de 40 px sur ordinateur, puis 20 px sur mobile. Les variantes `.hero--home` et `.hero--rental` conservent leurs cadrages et hauteurs spécifiques ; une page de service ou Contact utilise le Hero commun.
 
 | Surface | Présentation |
