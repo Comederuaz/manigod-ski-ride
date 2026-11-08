@@ -17,21 +17,42 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap" rel="stylesheet">
+<meta name="rentool-channel" content="stable">
+<link rel="preconnect" href="https://cdn.rentool.io" crossorigin>
+<link rel="preconnect" href="https://api2.rentool.io" crossorigin>
 <link rel="stylesheet" href="../css/site.css">
+<script defer src="../js/site-header.js"></script>
 </head>
 <body>
 
 <div class="topo">
 <header class="site-header">
 <a class="brand" href="index.html"><img data-f="manigod-ski-ride-logo-chamois" src="../images/manigod-ski-ride-logo-chamois.png" alt="Manigod Ski Ride"><span><b>MANIGOD</b><small>SKI RIDE</small><em>MOUNTAIN SPIRIT</em></span></a>
-<nav class="site-nav" aria-label="Main menu"><a href="location.html" class="is-active" aria-current="page">[ RENTAL ]</a><a href="consigne-a-ski.html">SKI LOCKERS</a><a href="atelier.html">WORKSHOP</a><a href="bootfitting.html">BOOTFITTING</a><a href="le-magasin.html">THE SHOP</a></nav>
-<div class="header-actions"><a class="btn-book" href="location.html#reserver">BOOK ONLINE →</a><a class="lang" href="../location-snowboard.html" aria-label="Version française">FR</a><button class="burger" aria-label="Menu" onclick="this.closest('header').classList.toggle('open')"><i></i><i></i><i></i></button></div>
+<nav class="site-nav" id="site-nav" aria-label="Main menu">
+<a href="location.html" class="is-active">SKI RENTAL</a>
+<div class="nav-services">
+<button type="button" class="nav-services__toggle" aria-expanded="false" aria-controls="services-menu">SERVICES <svg class="nav-services__chevron" viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></button>
+<div class="nav-services__menu" id="services-menu" inert>
+<div class="nav-services__items">
+<a href="consigne-a-ski.html"><span class="service-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18"/><path d="M12 3v18M8 8v3m8-3v3M4 17h16"/></svg></span><span class="service-link__copy"><strong>SKI LOCKERS</strong><span>Keep your boots and skis warm at the slopes.</span></span><span class="service-link__arrow" aria-hidden="true">→</span></a>
+<a href="atelier.html"><span class="service-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m14 6 4 4m-8 4-6 6m8-12a6 6 0 0 0-7 7l-3 3 4 4 3-3a6 6 0 0 0 7-7l-4 4-4-4 4-4Z"/></svg></span><span class="service-link__copy"><strong>WORKSHOP</strong><span>Sharpening, waxing and repairs for your skis.</span></span><span class="service-link__arrow" aria-hidden="true">→</span></a>
+<a href="bootfitting.html"><span class="service-link__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h8v9l5 4v5H4v-6l3-3V3Zm0 5h8M4 17h16M7 12h5"/></svg></span><span class="service-link__copy"><strong>BOOTFITTING</strong><span>Ski boots adapted to your feet for greater comfort.</span></span><span class="service-link__arrow" aria-hidden="true">→</span></a>
+</div>
+</div>
+</div>
+<a href="le-magasin.html">THE SHOP</a>
+</nav>
+<div class="header-actions">
+<div class="header-widgets"><rentool-cart-widget embed-token="rtw_1a21af10f247a7c5ac82ad02b1dd2f8e" locale="en" account-id="jh77fgr0xgjmwacg069jq5jc6d8g4pws" theme="light" style="--rentool-border: #dde2e1; --rentool-primary: #f0a06a; --rentool-bg: #ffffff; --rentool-text: #0c1c1f; --rentool-radius: 0px; --rentool-radius-button: 0px; --rentool-radius-input: 0px; --rentool-radius-block: 0px; --rentool-radius-modal: 0px; "></rentool-cart-widget><rentool-account-widget embed-token="rtw_1a21af10f247a7c5ac82ad02b1dd2f8e" locale="en" account-id="jh77fgr0xgjmwacg069jq5jc6d8g4pws" theme="light" style="--rentool-border: #dde2e1; --rentool-primary: #f0a06a; --rentool-bg: #ffffff; --rentool-text: #0c1c1f; --rentool-radius: 0px; --rentool-radius-button: 0px; --rentool-radius-input: 0px; --rentool-radius-block: 0px; --rentool-radius-modal: 0px; "></rentool-account-widget></div>
+<a class="lang" href="../location-snowboard.html" aria-label="Version française">FR</a>
+<button type="button" class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><i></i><i></i><i></i></button>
+</div>
 </header>
 <section class="hero">
 <div class="hero__media"><picture><source media="(max-width: 760px)" srcset="../images/manigod-ski-ride-snowboard-poudreuse-sapins-mobile.jpg"><img data-f="manigod-ski-ride-snowboard-poudreuse-sapins" src="../images/manigod-ski-ride-snowboard-poudreuse-sapins.jpg" alt="Snowboarder in powder among the fir trees" style="object-position: 45% 55%"></picture></div>
 <div class="hero__content">
 <span style="font-size: 13px; letter-spacing: 1px; color: #677475"><a href="index.html" style="color: #677475">Home</a> / <a href="location.html" style="color: #677475">Rental</a> / Snowboard</span>
-<h1 style="margin: 0; display: flex; flex-direction: column; gap: 18px"><span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 400; font-size: 14px; line-height: 22px; letter-spacing: 2.5px">SNOWBOARD · RENTAL</span><span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: clamp(36px, 4.2vw, 64px); line-height: 0.98; letter-spacing: -1px">SNOWBOARD RENTAL<br><i>IN MANIGOD</i></span></h1>
+<h1 class="page-title page-title--stacked"><span class="page-title__eyebrow">SNOWBOARD · RENTAL</span><span class="page-title__text">SNOWBOARD RENTAL<br><i>IN MANIGOD</i></span></h1>
 <p style="margin: 0; max-width: 620px; font-size: 18px; line-height: 28px; color: #3E4B4D">Boards and boots for adults and juniors, set up in the shop right on the slopes.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center">
 <a href="location.html#reserver" style="background: #F0A06A; color: #0C1C1F; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 700; font-size: 14px; letter-spacing: 1.5px; padding: 15px 22px">BOOK →</a>
@@ -39,14 +60,14 @@
 </div>
 </div>
 </section><section style="max-width: 1360px; margin: 0 auto; padding: 90px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
-<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 12px; letter-spacing: 2px; color: #2E8784">[ RENT ]</span><h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 40px; line-height: 46px">OUR RANGES</h2></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 12px; letter-spacing: 2px; color: #2E8784">[ RENT ]</span><h2 style="margin: 0">OUR RANGES</h2></div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 20px"><div style="background: #F3F5F4; border: 1px solid #DDE2E1; padding: 26px; display: flex; flex-direction: column; gap: 12px"><b style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 20px; letter-spacing: 1px">BLUE SNOWBOARD</b><span style="font-size: 15px; line-height: 24px; color: #3E4B4D">Your first day on a board, you're starting out: a forgiving, easy board to learn.</span></div><div style="background: #F3F5F4; border: 1px solid #DDE2E1; padding: 26px; display: flex; flex-direction: column; gap: 12px"><b style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 20px; letter-spacing: 1px">RED SNOWBOARD</b><span style="font-size: 15px; line-height: 24px; color: #3E4B4D">You've ridden before: a versatile board to progress on every run.</span></div><div style="background: #F3F5F4; border: 1px solid #DDE2E1; padding: 26px; display: flex; flex-direction: column; gap: 12px"><b style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 20px; letter-spacing: 1px">BLACK SNOWBOARD</b><span style="font-size: 15px; line-height: 24px; color: #3E4B4D">Top of the range, for groomed runs and powder alike.</span></div></div><div style="display: flex; flex-wrap: wrap; gap: 14px 28px"><a href="location.html#reserver" style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 13px; letter-spacing: 1.5px; color: #C8632A; border-bottom: 1px solid #C8632A; padding-bottom: 4px">SEE PRICES AND BOOK →</a></div>
 </section><section style="max-width: 1360px; margin: 0 auto; padding: 0 40px 90px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px"><span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 12px; letter-spacing: 2px; color: #2E8784">[ OUR BRANDS ]</span><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 16px; max-width: 640px"><div style="height: 88px; border: 1px solid #DDE2E1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 8px; "><img data-f="logo-faction" src="../images/logo-faction.svg" alt="Faction" style="max-width: 74%; max-height: 26px; filter: brightness(0); opacity: .92"></div><div style="height: 88px; border: 1px solid #DDE2E1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 8px; "><img data-f="logo-k2" src="../images/logo-k2.svg" alt="K2" style="max-width: 74%; max-height: 34px; filter: brightness(0); opacity: .92"></div><div style="height: 88px; border: 1px solid #DDE2E1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 8px; "><img data-f="logo-salomon" src="../images/logo-salomon.svg" alt="Salomon" style="max-width: 74%; max-height: 30px; filter: brightness(0); opacity: .92"></div></div></section><section style="max-width: 1360px; margin: 0 auto; padding: 0 40px 90px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
-<div style="display: flex; flex-direction: column; gap: 10px"><h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 40px; line-height: 46px">ALSO AT THE SHOP</h2></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><h2 style="margin: 0">ALSO AT THE SHOP</h2></div>
 <div style="display: flex; flex-wrap: wrap; gap: 14px 28px"><a href="atelier.html" style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 13px; letter-spacing: 1.5px; color: #C8632A; border-bottom: 1px solid #C8632A; padding-bottom: 4px">WORKSHOP →</a><a href="consigne-a-ski.html" style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 13px; letter-spacing: 1.5px; color: #C8632A; border-bottom: 1px solid #C8632A; padding-bottom: 4px">LOCKERS →</a></div>
 </section><section style="background: #F3F5F4; border-top: 1px solid #DDE2E1; border-bottom: 1px solid #DDE2E1">
 <div style="max-width: 1360px; margin: 0 auto; padding: 56px 40px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px">
-<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="margin: 0; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 800; font-size: 34px; line-height: 40px">READY TO BOOK?</h2><span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 12px; letter-spacing: 1.5px; color: #C8632A">−10% BEFORE 15 DECEMBER · CODE <b style="color: #0C1C1F">WINTER27</b> · FREE PARKING IN FRONT OF THE SHOP</span></div>
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="margin: 0">READY TO BOOK?</h2><span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 12px; letter-spacing: 1.5px; color: #C8632A">−10% BEFORE 15 DECEMBER · CODE <b style="color: #0C1C1F">WINTER27</b> · FREE PARKING IN FRONT OF THE SHOP</span></div>
 <a href="location.html#reserver" style="background: #F0A06A; color: #0C1C1F; font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 700; font-size: 15px; letter-spacing: 1.5px; padding: 16px 26px">BOOK ONLINE →</a>
 </div>
 </section>
@@ -61,6 +82,7 @@
 <span style="font-family: Archivo, sans-serif; font-stretch: 125%; font-size: 12px; letter-spacing: 2px; color: #2E8784">[ CONTACT ]</span>
 <a href="tel:+33450449139" style="font-family: Archivo, sans-serif; font-stretch: 125%; font-weight: 700; font-size: 20px; color: #0C1C1F">04 50 44 91 39</a>
 <a href="mailto:info@manigod-ski-ride.com" style="color: #0C1C1F">info@manigod-ski-ride.com</a>
+<a class="footer-contact-link" href="contact.html">Contact us →</a>
 <span style="display: flex; gap: 18px"><a href="https://www.instagram.com/" target="_blank" style="color: #0C1C1F; border-bottom: 1px solid #2E8784">Instagram</a></span>
 <a href="https://www.google.com/maps/search/?api=1&amp;query=Manigod+Ski+Ride+Col+de+la+Croix-Fry+Manigod" target="_blank" rel="noopener" style="color: #C8632A; border-bottom: 1px solid #C8632A; align-self: flex-start">Find us on Google Maps →</a>
 </div>
@@ -80,5 +102,6 @@
 </footer>
 </div>
 
-<a id="fab-reserver" href="location.html#reserver">BOOK →</a></body>
+<a id="fab-reserver" href="location.html#reserver">BOOK →</a><script type="module" src="https://cdn.rentool.io/widgets/v1/loader.js" data-rentool-channel="stable" crossorigin="anonymous" fetchpriority="high"></script>
+</body>
 </html>

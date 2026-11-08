@@ -6,28 +6,197 @@
              (761–1360 px) · mobile (≤ 760 px)
    ========================================================= */
 
+:root{
+  --site-font-family:Archivo,system-ui,sans-serif;
+  --site-ink:#0C1C1F;
+  --site-accent:#F0A06A;
+  --site-discount:#B42318;
+  --site-surface:#FFFFFF;
+  --site-surface-soft:#F3F5F4;
+  --site-border:#DDE2E1;
+  --site-control-border:#C5CFCE;
+  --site-text-secondary:#3E4B4D;
+  --site-text-muted:#677475;
+  --site-accent-text:#C8632A;
+  --site-accent-hover:#F4B587;
+  --site-focus:var(--site-accent-text);
+  --site-header-height:95px;
+  --site-header-surface:rgba(255,255,255,.84);
+  --site-header-sticky-surface:rgba(255,255,255,.92);
+  --site-header-border:rgba(221,226,225,.65);
+  --site-header-backdrop:blur(14px) saturate(1.1);
+  --site-header-control-gap:8px;
+  --site-header-cart-width:164px;
+  --site-header-account-width:128px;
+  --site-radius-control:0px;
+  --site-radius-card:0px;
+  --site-radius-dialog:0px;
+  --site-h1-font-size:clamp(34px,3.6vw,54px);
+  --site-h1-line-height:.98;
+  --site-h1-letter-spacing:-1.5px;
+  --site-h1-gap:22px;
+  --site-h2-font-size:35px;
+}
+
 /* ---------- Base ---------- */
-body{margin:0;background:#FFFFFF;font-family:Archivo,system-ui,sans-serif}
-a{color:#0C1C1F;text-decoration:none}
-a:hover{color:#C8632A}
-.topo{width:100%;color:#0C1C1F;font-family:Archivo,system-ui,sans-serif;overflow:hidden;background-color:#FFFFFF;background-image:url(../images/manigod-ski-ride-fond-courbes-de-niveau.svg);background-size:1600px auto;background-repeat:repeat;background-position:center top}
+body{margin:0;background:var(--site-surface);font-family:var(--site-font-family)}
+a{color:var(--site-ink);text-decoration:none}
+a:hover{color:var(--site-accent-text)}
+button:not(.nav-services__toggle):not(.burger){border-radius:var(--site-radius-control)}
+:is(a,button):focus-visible{outline:2px solid var(--site-focus);outline-offset:3px}
+.topo{width:100%;color:#0C1C1F;font-family:var(--site-font-family);overflow:hidden;background-color:#FFFFFF;background-image:url(../images/manigod-ski-ride-fond-courbes-de-niveau.svg);background-size:1600px auto;background-repeat:repeat;background-position:center top}
 a[style*="letter-spacing"],button{white-space:nowrap}
 [style*="flex: 1 1 260px"]>span[style*="display: flex"]{flex-wrap:wrap;row-gap:8px}
 
+/* ---------- Titres communs à toutes les pages ---------- */
+h1,h2{margin:0;font-family:var(--site-font-family);font-stretch:125%;font-weight:800;overflow-wrap:anywhere}
+h1{font-size:var(--site-h1-font-size);line-height:var(--site-h1-line-height);letter-spacing:var(--site-h1-letter-spacing)}
+.page-title--stacked{display:flex;flex-direction:column;gap:var(--site-h1-gap)}
+.page-title__eyebrow{display:block;font-size:15px;font-weight:400;line-height:24px;letter-spacing:2.5px}
+.page-title__text{display:block}
+h2{font-size:var(--site-h2-font-size);line-height:1.15;letter-spacing:0}
+
+/* ---------- Rentool: shared type, palette and controls (public CSS contract v1) ---------- */
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget,rentool-contact-widget){
+  --rentool-font:var(--site-font-family);
+  --rentool-title-font:var(--site-font-family);
+  --rentool-button-font:var(--site-font-family);
+  --rentool-font-min-size:12px;
+  --rentool-type-title-font-family:var(--site-font-family);
+  --rentool-type-title-font-size:20px;
+  --rentool-type-title-font-weight:800;
+  --rentool-type-title-line-height:1.2;
+  --rentool-type-title-letter-spacing:.3px;
+  --rentool-type-title-text-transform:uppercase;
+  --rentool-type-subtitle-font-family:var(--site-font-family);
+  --rentool-type-subtitle-font-weight:700;
+  --rentool-type-body-font-family:var(--site-font-family);
+  --rentool-type-body-font-size:14px;
+  --rentool-type-body-line-height:1.5;
+  --rentool-type-muted-font-family:var(--site-font-family);
+  --rentool-type-muted-font-size:13px;
+  --rentool-type-muted-line-height:1.45;
+  --rentool-type-button-font-family:var(--site-font-family);
+  --rentool-type-button-font-weight:600;
+  --rentool-type-label-font-family:var(--site-font-family);
+  --rentool-type-label-font-size:12px;
+  --rentool-type-label-font-weight:700;
+  --rentool-type-label-letter-spacing:.5px;
+  --rentool-type-caption-font-family:var(--site-font-family);
+  --rentool-type-caption-font-size:12px;
+  --rentool-type-price-font-family:var(--site-font-family);
+  --rentool-primary-fg:var(--site-ink);
+  --rentool-action-primary-fg:var(--site-ink);
+  --rentool-primary-hover:var(--site-accent-hover);
+  --rentool-secondary:var(--site-ink);
+  --rentool-secondary-fg:var(--site-surface);
+  --rentool-control-active:var(--site-ink);
+  --rentool-control-active-fg:var(--site-surface);
+  --rentool-selection:var(--site-ink);
+  --rentool-selection-fg:var(--site-surface);
+  --rentool-text-muted:var(--site-text-secondary);
+  --rentool-title-text:var(--site-ink);
+  --rentool-link:var(--site-accent-text);
+  --rentool-field-bg:var(--site-surface);
+  --rentool-field-text:var(--site-ink);
+  --rentool-focus-ring:var(--site-focus);
+  --rentool-radius-inner:var(--site-radius-control);
+  --rentool-radius-block-inner:var(--site-radius-control);
+  --rentool-calendar-day-radius:var(--site-radius-control);
+}
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(text-title){font-family:var(--site-font-family);font-stretch:125%;font-size:var(--rentool-type-title-font-size,20px);font-weight:800;line-height:1.2;letter-spacing:.3px;text-transform:uppercase;color:var(--site-ink)}
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-primary){min-height:48px;border-radius:var(--site-radius-control);font-family:var(--site-font-family);font-stretch:125%;font-size:13px;font-weight:700;line-height:1.4;letter-spacing:1px;text-transform:uppercase;background:var(--site-accent);border-color:var(--site-accent);color:var(--site-ink)}
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-primary):hover:not(:disabled){background:var(--site-accent-hover);border-color:var(--site-accent-hover)}
+/* Fit the label while keeping Rentool's animated expanded/compact states. */
+rentool-rental-search::part(submit-wrap){--rentool-button-padding-x:6px;--site-search-action-stretch:100%}
+rentool-rental-search::part(button-primary){font-stretch:var(--site-search-action-stretch,125%)}
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-secondary),
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-outline){font-family:var(--site-font-family);font-stretch:115%;font-size:12px;font-weight:700;line-height:1.4;letter-spacing:.6px;text-transform:uppercase;color:var(--site-ink);border-color:var(--site-control-border);border-radius:var(--site-radius-control)}
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-ghost){font-family:var(--site-font-family);font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;color:var(--site-ink)}
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(element-input),
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(element-select),
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(element-textarea){font-family:var(--site-font-family);font-size:16px;font-weight:400;line-height:1.4;letter-spacing:0;text-transform:none;border-radius:var(--site-radius-control);accent-color:var(--site-ink)}
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button):focus-visible,
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(element-button):focus-visible,
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(element-input):focus-visible,
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(element-select):focus-visible,
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(element-textarea):focus-visible{outline:2px solid var(--site-focus);outline-offset:3px}
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(surface-modal){background:var(--site-surface);border-radius:var(--site-radius-dialog)}
+:is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(link){color:var(--site-accent-text);text-underline-offset:3px}
+
+/* Category choices need more prominence than compact step labels. */
+:is(rentool-rental-widget,rentool-cart-widget)::part(nav-badges){flex-wrap:wrap;gap:20px 28px}
+:is(rentool-rental-widget,rentool-cart-widget)::part(category-filter-group){max-inline-size:100%}
+:is(rentool-rental-widget,rentool-cart-widget)::part(nav-badge-group){max-inline-size:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--site-control-border) transparent}
+:is(rentool-rental-widget,rentool-cart-widget)::part(nav-badge-indicator){height:44px;bottom:auto}
+:is(rentool-rental-widget,rentool-cart-widget)::part(nav-badge),
+:is(rentool-rental-widget,rentool-cart-widget)::part(category-sheet-option){box-sizing:border-box;font-family:var(--site-font-family);font-size:15px;font-weight:500;line-height:1.35;letter-spacing:.1px;text-transform:none;min-height:44px;padding:10px 18px}
+:is(rentool-rental-widget,rentool-cart-widget)::part(category-sheet-option){min-height:48px}
+:is(rentool-rental-widget,rentool-cart-widget)::part(mobile-category-summary){font-size:15px;font-weight:500}
+:is(rentool-rental-widget,rentool-cart-widget)::part(modal-step),
+rentool-cart-widget::part(cart-step){font-family:var(--site-font-family);font-size:13px;font-weight:600;letter-spacing:.1px;text-transform:none}
+:is(rentool-rental-widget,rentool-cart-widget)::part(category-filter-title),
+:is(rentool-rental-widget,rentool-cart-widget)::part(category-sheet-group-title){font-family:var(--site-font-family);font-size:13px;font-weight:500;letter-spacing:.7px;text-transform:uppercase;color:var(--site-text-secondary)}
+:is(rentool-rental-widget,rentool-cart-widget)::part(member-name),
+:is(rentool-rental-widget,rentool-cart-widget)::part(option-label),
+:is(rentool-rental-widget,rentool-cart-widget)::part(modal-option){font-family:var(--site-font-family);font-size:14px;font-weight:600;line-height:1.4;text-transform:none}
+:is(rentool-rental-widget,rentool-cart-widget)::part(member):hover{box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--rentool-text,var(--site-ink)) 35%,transparent)}
+:is(rentool-rental-widget,rentool-cart-widget)::part(member-price){font-family:var(--site-font-family);font-size:12px;font-weight:600;color:var(--site-text-secondary)}
+@media (prefers-reduced-motion:reduce){
+  :is(rentool-rental-widget,rentool-cart-widget)::part(nav-badge-indicator){transition:none}
+}
+
+/* Header actions keep their white surface and compact dimensions. */
+:is(rentool-cart-widget,rentool-account-widget)::part(trigger){font-family:var(--site-font-family);font-size:12px;font-weight:600;font-stretch:100%;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--site-ink);background:var(--site-surface)}
+:is(rentool-cart-widget,rentool-account-widget)::part(badge){background:var(--site-accent);color:var(--site-ink);font-family:var(--site-font-family);font-weight:700}
+/* Context labels follow the foreground of their selected control. */
+rentool-rental-search::part(dates-trigger),
+:is(rentool-rental-widget,rentool-cart-widget)::part(option){--rentool-text-muted:currentColor;--rentool-type-muted-color:currentColor}
+@media (max-width:760px){
+  rentool-cart-widget::part(mobile-checkout-footer-total){min-inline-size:88px;flex-shrink:0}
+}
+@media (max-width:380px){
+  :is(rentool-rental-search,rentool-rental-widget,rentool-cart-widget,rentool-account-widget)::part(button-primary){font-size:12px;font-stretch:100%;letter-spacing:.6px}
+}
+
 /* ---------- En-tête ---------- */
-.site-header{max-width:1360px;margin:0 auto;padding:36px 40px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:28px;position:relative}
+.site-header{width:100%;margin:0 auto;padding:20px max(32px,calc((100vw - 1280px)/2 + 32px));box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;position:relative;z-index:20;background:var(--site-header-surface);border-bottom:1px solid var(--site-header-border);-webkit-backdrop-filter:var(--site-header-backdrop);backdrop-filter:var(--site-header-backdrop)}
+.site-header-spacer{height:0}
+.site-header.is-sticky{position:fixed;top:0;left:0;right:0;transform:translateY(-105%);transition:none;background:var(--site-header-sticky-surface);box-shadow:0 8px 28px rgba(12,28,31,.1)}
+.site-header.is-sticky.is-visible{transform:translateY(0);transition:transform .34s cubic-bezier(.2,.7,.2,1)}
 .brand{display:flex;align-items:center;gap:14px;white-space:nowrap}
-.brand img{width:64px;height:64px;display:block}
-.brand b{display:block;font-stretch:125%;font-weight:800;font-size:22px;line-height:22px;letter-spacing:.5px}
-.brand small{display:block;font-stretch:125%;font-weight:500;font-size:17px;line-height:22px}
-.brand em{display:block;font-style:normal;font-stretch:125%;font-weight:400;font-size:10px;letter-spacing:2.5px;color:#677475;margin-top:2px}
-.site-nav{display:flex;gap:10px 24px;font-stretch:125%;font-size:13px;letter-spacing:1.5px}
-.site-nav a.is-active{color:#2E8784}
-.header-actions{display:flex;align-items:center;gap:20px}
-.btn-book{background:#F0A06A;color: #0C1C1F;font-stretch:125%;font-weight:700;font-size:13px;letter-spacing:1.5px;padding:14px 20px}
-.btn-book:hover{color: #0C1C1F;background:#F4B587}
-.lang{border:1.5px solid #0C1C1F;border-radius:6px;padding:5px 7px;font-size:11px;font-weight:600}
-.burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;padding:0;flex:0 0 44px;background:none;border:1.5px solid #0C1C1F;border-radius:6px;cursor:pointer}
+.brand img{width:54px;height:54px;display:block}
+.brand b{display:block;font-stretch:125%;font-weight:800;font-size:19px;line-height:20px;letter-spacing:.5px}
+.brand small{display:block;font-stretch:125%;font-weight:500;font-size:15px;line-height:20px}
+.brand em{display:block;font-style:normal;font-stretch:125%;font-weight:400;font-size:10px;letter-spacing:2.5px;color:var(--site-text-muted);margin-top:2px}
+.site-nav{display:flex;align-items:center;gap:10px 24px;font-stretch:125%;font-size:13px;letter-spacing:1.2px}
+.site-nav a.is-active,.nav-services__toggle.is-active{color:var(--site-accent-text)}
+.nav-services{position:static}
+.nav-services__toggle{display:flex;align-items:center;gap:7px;padding:8px 0;border:0;background:none;color:var(--site-ink);font:inherit;letter-spacing:inherit;cursor:pointer}
+.nav-services__chevron{display:block;flex:0 0 16px;transition:transform .24s ease}
+.nav-services.open .nav-services__chevron{transform:rotate(180deg)}
+.nav-services__menu{position:absolute;top:100%;left:50%;width:min(460px,calc(100vw - 40px));box-sizing:border-box;padding:10px;background:var(--site-surface);border:1px solid var(--site-border);border-top:2px solid var(--site-accent);box-shadow:0 18px 36px rgba(12,28,31,.14);z-index:30;opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-8px);transition:opacity .2s ease,transform .24s ease,visibility 0s .24s}
+.nav-services.open .nav-services__menu{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0);transition:opacity .2s ease,transform .24s ease,visibility 0s}
+.nav-services__items{min-height:0}
+.nav-services__menu a{display:flex;align-items:center;gap:14px;padding:16px 12px;white-space:normal;color:var(--site-ink);transition:background-color .18s ease}
+.nav-services__menu a+a{border-top:1px solid var(--site-border)}
+.nav-services__menu a:hover,.nav-services__menu a:focus-visible{background:var(--site-surface-soft)}
+.service-link__icon{display:grid;place-items:center;flex:0 0 48px;height:48px;color:var(--site-ink);background:var(--site-surface-soft)}
+.service-link__copy{display:flex;flex:1;flex-direction:column;gap:5px;min-width:0}
+.service-link__copy strong{font-size:13px;line-height:1.4;letter-spacing:1px;font-weight:700}
+.service-link__copy>span{font-size:13px;line-height:1.5;letter-spacing:0;font-stretch:100%;color:var(--site-text-secondary)}
+.service-link__arrow{font-size:20px;color:var(--site-accent-text);transition:transform .18s ease}
+.nav-services__menu a:hover .service-link__arrow{transform:translateX(3px)}
+.header-actions{display:flex;align-items:center;gap:var(--site-header-control-gap)}
+.header-widgets{display:flex;align-items:center;gap:var(--site-header-control-gap);flex:0 0 auto;min-height:42px}
+.header-widgets>rentool-cart-widget,.header-widgets>rentool-account-widget{display:block;--rentool-radius-button:var(--site-radius-control)!important;--rentool-radius-block:var(--site-radius-card)!important;--rentool-radius-modal:var(--site-radius-dialog)!important}
+.header-widgets>rentool-cart-widget{display:flex;justify-content:flex-end;inline-size:var(--site-header-cart-width);flex:0 0 var(--site-header-cart-width)}
+.header-widgets>rentool-account-widget{inline-size:var(--site-header-account-width);flex:0 0 var(--site-header-account-width)}
+.btn-book{background:#F0A06A;color: #0C1C1F;font-stretch:125%;font-weight:700;font-size:13px;letter-spacing:1.5px;padding:14px 20px;border-radius:var(--site-radius-control)}
+.btn-book:hover{color:var(--site-ink);background:var(--site-accent-hover)}
+.lang{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-width:44px;height:42px;padding:0 12px;background:var(--site-surface);border:0;border-radius:var(--site-radius-control);box-shadow:0 1px 0 rgba(12,28,31,.06);font-size:12px;font-weight:700}
+.lang:hover{background:var(--site-surface-soft)}
+.burger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;padding:0;flex:0 0 44px;background:none;border:1.5px solid #0C1C1F;border-radius:var(--site-radius-control);cursor:pointer}
 .burger i{display:block;width:20px;height:2px;background:#0C1C1F;transition:.2s}
 .site-header.open .burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .site-header.open .burger i:nth-child(2){opacity:0}
@@ -36,14 +205,67 @@ a[style*="letter-spacing"],button{white-space:nowrap}
 /* ---------- Haut de page (hero) ----------
    La photo démarre à droite de la colonne de texte, quel que soit l'écran.
    Chaque photo a un cadrage ordinateur (object-position) et un recadrage mobile dédié. */
-.hero{position:relative;min-height:clamp(560px,42vw,780px);display:flex;align-items:flex-end}
+.hero{position:relative;margin-top:calc(-1 * var(--site-header-height));min-height:calc(clamp(560px,42vw,780px) + var(--site-header-height));display:flex;align-items:flex-end}
 .hero__media{position:absolute;top:0;right:0;bottom:var(--hero-bottom,0);left:calc(max(40px, (100% - 1360px) / 2 + 40px) + 420px);overflow:hidden;background:#DDE2E1}
 .hero__media img{width:100%;height:100%;object-fit:cover;display:block}
 .hero__media::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#FFFFFF 0%,rgba(255,255,255,.78) 22%,rgba(255,255,255,.25) 50%,rgba(255,255,255,0) 70%),linear-gradient(0deg,#FFFFFF 0%,rgba(255,255,255,0) 28%)}
 .hero__placeholder{position:absolute;top:18px;right:18px;z-index:1;background:#FFFFFF;color:#C8632A;font-size:12px;letter-spacing:.5px;padding:8px 10px}
 .hero__content{position:relative;z-index:1;width:100%;max-width:1360px;margin:0 auto;padding:90px 40px 64px;box-sizing:border-box;display:flex;flex-direction:column;gap:22px}
-.hero__content h1 span[style*="clamp("]{text-shadow:0 2px 24px rgba(255,255,255,.6)}
 .hero--home .hero__content{padding:56px 40px 40px;gap:28px}
+.hero--home{min-height:calc(clamp(560px,42vw,700px) + var(--site-header-height))}
+.hero--home .hero__media::after{background:linear-gradient(90deg,#FFFFFF 0%,rgba(255,255,255,.78) 22%,rgba(255,255,255,.25) 50%,rgba(255,255,255,0) 70%),linear-gradient(0deg,#FFFFFF 0%,rgba(255,255,255,0) 35%)}
+.hero-booking{width:min(100%,620px);margin-top:20px;padding:20px;background:rgba(255,255,255,.18);border:1px solid rgba(221,226,225,.55);border-radius:var(--site-radius-card);-webkit-backdrop-filter:blur(16px) saturate(1.08);backdrop-filter:blur(16px) saturate(1.08);box-sizing:border-box;box-shadow:0 10px 32px rgba(12,28,31,.08)}
+.hero-booking__intro{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 20px;margin-bottom:24px;font-family:Archivo,sans-serif;font-stretch:125%;letter-spacing:1px}
+.hero-booking__intro strong{font-size:14px}
+.hero-booking__intro span{font-size:12px;color:var(--site-accent-text)}
+.hero-booking__intro b{padding:2px 7px;border:1px dashed #F0A06A;color:#0C1C1F}
+.hero-booking rentool-rental-search{display:block;width:100%;overflow:hidden;border-radius:var(--site-radius-card);box-shadow:none!important;--rentool-search-max-width:100%;--rentool-border:var(--site-control-border)!important;--rentool-radius:var(--site-radius-control)!important;--rentool-radius-button:var(--site-radius-control)!important;--rentool-radius-input:var(--site-radius-control)!important;--rentool-radius-block:var(--site-radius-card)!important;--rentool-radius-modal:var(--site-radius-dialog)!important}
+.rental-catalog-search{display:block;width:100%;overflow:hidden;border-radius:var(--site-radius-card);box-shadow:none!important;--rentool-search-max-width:100%;--rentool-border:var(--site-control-border)!important;--rentool-radius:var(--site-radius-control)!important;--rentool-radius-button:var(--site-radius-control)!important;--rentool-radius-input:var(--site-radius-control)!important;--rentool-radius-block:var(--site-radius-card)!important;--rentool-radius-modal:var(--site-radius-dialog)!important}
+
+/* The frame follows the widget's documented desktop/mobile control heights.
+   Apply the crop only after rentool-ready, so initial errors remain fully visible. */
+.rental-search-frame{width:100%;min-height:70px;container-type:inline-size}
+.rental-search-frame rentool-rental-search::part(loading){margin-bottom:0}
+.hero--rental{min-height:calc(clamp(480px,34vw,560px) + var(--site-header-height))}
+.hero--rental .hero__content{padding:36px 40px 32px;gap:18px}
+.rental-hero-booking{display:flex;flex-direction:column;gap:16px;width:min(100%,540px);margin-top:6px;scroll-margin-top:110px}
+.rental-hero-offer{font-family:Archivo,sans-serif;font-stretch:125%;font-size:12px;line-height:1.5;letter-spacing:1.5px;color:var(--site-accent-text)}
+.rental-catalog{padding:32px 0 40px;background:var(--site-surface-soft);border-block:1px solid var(--site-border)}
+.rental-catalog__inner{width:100%;max-width:none;margin:0}
+/* Clip page overflow without trapping the widget's native sticky filters. */
+.rental-page .topo{overflow:clip}
+.rental-catalog rentool-rental-widget{display:block;width:100%;max-width:none;--rentool-rental-filters-max-width:1280px}
+
+/* Rental cards use the public Rentool presentation contract (CSS parts v1). */
+:is(rentool-rental-widget,rentool-cart-widget)::part(card){--rentool-type-title-font-size:17px}
+:is(rentool-rental-widget,rentool-cart-widget)::part(desc){line-height:1.4}
+.rental-catalog rentool-rental-widget::part(card){
+  border-color:var(--site-border);
+  border-radius:var(--site-radius-card);
+  background:var(--site-surface);
+}
+.rental-catalog rentool-rental-widget::part(amount){
+  font-family:var(--site-font-family);
+  font-weight:800;
+  letter-spacing:-.5px;
+  color:var(--site-ink);
+}
+:is(rentool-rental-widget,rentool-cart-widget)::part(discount-note){box-sizing:border-box;padding:5px 8px;border:1px solid var(--site-discount);border-radius:var(--site-radius-control);background:var(--site-discount);color:var(--site-surface);box-shadow:none;font-family:var(--site-font-family);font-size:14px;font-weight:800;line-height:1.2;letter-spacing:.2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rental-catalog rentool-rental-widget::part(media-details-button){
+  color:var(--site-accent-text);
+  font-family:var(--site-font-family);
+  font-weight:600;
+}
+.rental-catalog rentool-rental-widget::part(reserve-button){letter-spacing:1.5px}
+.rental-catalog rentool-rental-widget::part(reserve-button)::after{content:"→";margin-inline-start:.4em}
+.rental-catalog rentool-rental-widget::part(reserve-button):hover:not(:disabled){background:var(--site-accent-hover);border-color:var(--site-accent-hover)}
+.rental-catalog rentool-rental-widget::part(reserve-button):focus-visible{outline:2px solid var(--site-focus);outline-offset:3px}
+.rental-search-frame rentool-rental-search{--rentool-search-height:66px}
+.rental-search-frame rentool-rental-search.is-ready{height:66px}
+@container (max-width:520px){
+  .rental-search-frame rentool-rental-search{--rentool-search-height:70px}
+  .rental-search-frame rentool-rental-search.is-ready{height:70px}
+}
 
 /* ---------- Bouton Réserver fixe (mobile) ---------- */
 #fab-reserver{display:none}
@@ -54,12 +276,21 @@ a[style*="letter-spacing"],button{white-space:nowrap}
 /* =========================================================
    Portable / tablette : menu dans le bouton ☰
    ========================================================= */
-@media (max-width:1360px){
+@media (max-width:1100px){
   .burger{display:flex}
-  .site-nav{display:none}
-  .header-actions{gap:14px}
-  .site-header.open .site-nav{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;z-index:9998;background:#FFFFFF;padding:4px 40px 24px;gap:0;border-top:1px solid rgba(237,237,232,.15);box-shadow:0 20px 30px rgba(0,0,0,.5)}
-  .site-header.open .site-nav a{padding:16px 0;font-size:15px;border-bottom:1px solid rgba(237,237,232,.08)}
+  .site-nav{display:flex;align-items:stretch;flex-direction:column;position:absolute;top:100%;left:0;right:0;z-index:30;background:#FFFFFF;padding:8px 32px 20px;gap:0;border-top:1px solid #DDE2E1;box-shadow:0 20px 30px rgba(12,28,31,.15);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:opacity .2s ease,transform .24s ease,visibility 0s .24s}
+  .site-header.open .site-nav{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);transition:opacity .2s ease,transform .24s ease,visibility 0s}
+  .site-nav{box-sizing:border-box;max-height:calc(100dvh - var(--site-header-height,95px));overflow-y:auto;overscroll-behavior:contain}
+  .site-nav>*{flex-shrink:0}
+  .site-header.open .site-nav>a,.site-header.open .nav-services__toggle{padding:14px 0;font-size:15px;border-bottom:1px solid #DDE2E1}
+  .site-header.open .nav-services__toggle{width:100%;justify-content:space-between}
+  .nav-services__menu{position:static;display:grid;grid-template-rows:0fr;width:100%;min-width:0;padding:0;border:0;box-shadow:none;background:#F3F5F4;transform:translateY(-6px);transition:grid-template-rows .26s ease,opacity .2s ease,transform .24s ease,visibility 0s .26s}
+  .nav-services.open .nav-services__menu{grid-template-rows:1fr;transform:translateY(0);transition:grid-template-rows .26s ease,opacity .2s ease,transform .24s ease,visibility 0s}
+  .nav-services__items{overflow:hidden}
+  .nav-services__menu a{padding:14px 10px;gap:10px}
+  .service-link__icon{flex-basis:40px;height:44px}
+  .service-link__copy>span{font-size:12px}
+  .service-link__arrow{font-size:18px}
 }
 @media (max-width:1100px){
   .hero__media{left:38%}
@@ -69,34 +300,41 @@ a[style*="letter-spacing"],button{white-space:nowrap}
    Mobile (≤ 760 px)
    ========================================================= */
 @media (max-width:760px){
+  :root{--site-header-height:73px;--site-h1-font-size:26px;--site-h1-line-height:1.05;--site-h1-letter-spacing:-.5px;--site-h1-gap:14px}
+  .page-title__eyebrow{font-size:11px;line-height:18px;letter-spacing:1.5px}
   /* En-tête */
-  .site-header{padding:14px 16px;gap:10px}
+  .site-header{padding:14px 16px;gap:10px;--site-header-control-gap:4px;--site-header-cart-width:42px;--site-header-account-width:42px}
   .brand{gap:10px}
   .brand img{width:44px;height:44px}
   .brand b{font-size:15px;line-height:15px}
   .brand small{font-size:11px;line-height:15px}
   .brand em{font-size:7px;letter-spacing:1.5px}
-  .header-actions{gap:10px}
   .header-actions .btn-book{display:none}
   .site-header.open .site-nav{padding:4px 20px 20px}
+  .hero-booking{padding:16px;margin-top:14px}
+  .hero-booking__intro{gap:6px;margin-bottom:20px}
+  .hero-booking__intro span{line-height:1.5}
 
   /* Haut de page : photo pleine largeur (recadrage mobile), texte qui chevauche le bas de la photo */
   .hero{display:block;min-height:0}
-  .hero__media{position:relative;left:0;right:0;bottom:auto;aspect-ratio:3/2;height:auto}
+  .hero__media{position:relative;left:0;right:0;bottom:auto;aspect-ratio:auto;height:calc(100vw * 2 / 3 + var(--site-header-height))}
   .hero__media img{object-position:50% 50%!important}
   .hero__media::after{background:linear-gradient(0deg,#FFFFFF 0%,rgba(255,255,255,.55) 30%,rgba(255,255,255,0) 60%)}
   .hero__content,.hero--home .hero__content{margin-top:-24vw;padding:0 20px 36px;gap:16px;text-shadow:0 1px 12px rgba(255,255,255,.85)}
+  .hero--home .hero__content{margin-top:-18vw;padding-bottom:32px}
+  .hero--rental{min-height:0}
+  .hero--rental .hero__media{aspect-ratio:16/9}
+  .hero--rental .hero__content{margin-top:-16vw;padding:0 20px 24px;gap:16px}
+  .rental-hero-booking{gap:14px}
+  .rental-catalog{padding:24px 0 32px}
   .hero__content form,.hero__content a{text-shadow:none}
   .hero__content>div>a{font-size:12px!important;padding:12px 14px!important;letter-spacing:1px!important}
 
   /* Bouton Réserver fixe */
-  #fab-reserver{display:flex;position:fixed;right:12px;bottom:12px;z-index:9999;align-items:center;height:44px;padding:0 18px;background:#F0A06A;color: #0C1C1F;font-stretch:125%;font-weight:700;font-size:13px;letter-spacing:1.5px;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+  #fab-reserver{display:flex;position:fixed;right:12px;bottom:12px;z-index:9999;align-items:center;height:44px;padding:0 18px;background:#F0A06A;color: #0C1C1F;font-stretch:125%;font-weight:700;font-size:13px;letter-spacing:1.5px;border-radius:var(--site-radius-control);box-shadow:0 6px 20px rgba(0,0,0,.45)}
+  #fab-reserver.is-hidden{display:none}
 
-  /* Titres */
-  h1 span[style*="clamp("]{font-size:30px!important;line-height:1.02!important;letter-spacing:-.5px!important}
-  h1{gap:14px!important}
-  h1>span[style*="letter-spacing: 2.5px"],h1+p{font-size:11px!important;line-height:18px!important;letter-spacing:1.5px!important}
-  h2[style*="font-size: 34px"],h2[style*="font-size: 40px"],h2[style*="font-size: 44px"],h2[style*="font-size: 48px"],h2[style*="clamp("]{font-size:28px!important;line-height:32px!important}
+  h1+p{font-size:11px!important;line-height:18px!important;letter-spacing:1.5px!important}
 
   /* Tailles de texte */
   [style*="font-size: 15px"]{font-size:13px!important;line-height:1.45!important}
@@ -193,7 +431,6 @@ section[style*="background: #F3F5F4"]{background:rgba(10,23,25,.55)!important}
 div[style*="display: grid"]>div[style*="border-top: 1px solid #DDE2E1"][style*="padding-top"]{background:#F3F5F4;border:1px solid #DDE2E1!important;padding:22px 24px 24px!important}
 div[style*="border: 1px solid #DDE2E1"]:not([style*="background"]),a[style*="border: 1px solid #DDE2E1"]:not([style*="background"]){background:#F3F5F4}
 .hero{background-color:#FFFFFF}
-.site-header{background-color:#FFFFFF;box-shadow:0 0 0 100vmax #FFFFFF;clip-path:inset(0 -100vmax)}
 @media (max-width:760px){div[style*="display: grid"][style*="repeat(4, minmax(0, 1fr))"],div[style*="display: grid"][style*="repeat(3, minmax(0, 1fr))"]{grid-template-columns:minmax(0,1fr)!important;gap:14px!important}}
 /* ---------- Logos de marques : repli sur mobile ---------- */
 .logos-more{display:none}
@@ -248,7 +485,37 @@ div[style*="display: grid"]>div[style*="border-top: 1px solid #DDE2E1"][style*="
 div[style*="border: 1px solid #DDE2E1"]:not([style*="background"]),a[style*="border: 1px solid #DDE2E1"]:not([style*="background"]){background:#FFFFFF}
 .hero{background-color:#FFFFFF!important}
 
-footer{background:#F3F5F4!important;border-top:1px solid #DDE2E1!important}.site-header{background-color:#FFFFFF!important}
+footer{background:#F3F5F4!important;border-top:1px solid #DDE2E1!important}
+
+/* Cadrages spécifiques : l'en-tête vitré et le chevauchement Hero sont communs. */
+.home-page .hero--home .hero__media{left:calc(max(40px,(100% - 1360px)/2 + 40px) + 320px)}
+.home-page .hero--home .hero__media img{animation:home-photo-drift 14s linear infinite alternate;transform-origin:center center}
+@keyframes home-photo-drift{
+  from{transform:scale(1.035) translate3d(0,0,0)}
+  to{transform:scale(1.11) translate3d(-1.3%,-.8%,0)}
+}
+@media (min-width:761px) and (max-width:1100px){
+  .home-page .hero--home .hero__media{left:32%}
+}
+@media (max-width:760px){
+  .home-page .hero--home .hero__media{left:0;aspect-ratio:6/5;height:auto}
+  .rental-page .hero--rental .hero__media{aspect-ratio:auto;height:calc(56.25vw + var(--site-header-height))}
+}
+@media (max-width:380px){
+  :root{--site-header-height:63px}
+  .site-header{padding:10px 10px;gap:6px;--site-header-control-gap:2px}
+  .brand{gap:6px}
+  .brand img{width:32px;height:32px}
+  .brand b{font-size:11px;line-height:13px}
+  .brand small{font-size:9px;line-height:13px}
+  .brand em{font-size:6px;letter-spacing:.6px;margin-top:0}
+  .lang{min-width:40px;height:40px;padding:0 8px;font-size:11px}
+  .burger{width:40px;height:40px;flex-basis:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  .home-page .hero--home .hero__media img{animation:none;transform:none}
+  .site-header.is-sticky,.site-header.is-sticky.is-visible{transition:none}
+}
 @media (max-width:760px){
   div[style*="display: grid"]>div[style*="border-top: 1px solid #DDE2E1"][style*="padding-top"]{padding:16px 18px 18px!important;gap:6px!important}
   div[style*="display: grid"]>div[style*="border-top: 1px solid #DDE2E1"][style*="padding-top"]>span[style*="color: #2E8784"]:first-child{display:none}
@@ -256,3 +523,62 @@ footer{background:#F3F5F4!important;border-top:1px solid #DDE2E1!important}.site
 
 .topo{background-image:none!important}
 [style*="aspect-ratio"]>span[aria-hidden="true"][style*="rgba(6,16,18"]{background:linear-gradient(0deg,rgba(255,255,255,.95) 22%,rgba(255,255,255,0))!important}[style*="aspect-ratio"]:has(>span[aria-hidden="true"][style*="rgba(6,16,18"])>span:not([aria-hidden]){color:#0C1C1F!important}[style*="aspect-ratio"]:has(>span[aria-hidden="true"][style*="rgba(6,16,18"])>span:not([aria-hidden])[style*="font-size: 14px"]{color:#3E4B4D!important}[style*="aspect-ratio"]:has(>span[aria-hidden="true"][style*="rgba(6,16,18"])>span a:not([style*="background"]){color:#0C1C1F!important;border-color:#0C1C1F!important}
+
+@media (prefers-reduced-motion:reduce){
+  .site-nav,.site-header.open .site-nav,.nav-services__menu,.nav-services.open .nav-services__menu,.nav-services__chevron,.service-link__arrow,.nav-services__menu a{transition:none}
+}
+
+/* ---------- Page Contact : mêmes titres, couleurs et angles droits ---------- */
+.site-button{display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;min-height:48px;padding:14px 20px;border:1px solid transparent;border-radius:var(--site-radius-control);background:var(--site-accent);color:var(--site-ink);font-family:var(--site-font-family);font-stretch:125%;font-weight:700;font-size:13px;line-height:1.4;letter-spacing:1px;text-align:center}
+.site-button:hover{background:var(--site-accent-hover);color:var(--site-ink)}
+.site-button--secondary{background:rgba(255,255,255,.7);border-color:var(--site-control-border)}
+.site-button--secondary:hover{background:var(--site-surface-soft)}
+.contact-content{display:flow-root}
+.contact-breadcrumb{font-size:13px;line-height:1.5;letter-spacing:1px;color:var(--site-text-muted)}
+.contact-breadcrumb a{color:inherit}
+.contact-hero-copy{max-width:620px;font-size:18px;line-height:1.6;color:var(--site-text-secondary)}
+.contact-hero-copy p{margin:0}
+.contact-actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px}
+.contact-section{box-sizing:border-box;width:100%;max-width:1360px;margin:0 auto;padding:72px 40px}
+.contact-section-intro{display:flex;flex-direction:column;gap:14px;max-width:820px;margin-bottom:32px}
+.contact-section-intro p,.contact-access-copy p{margin:0;font-size:16px;line-height:1.65;color:var(--site-text-secondary)}
+.contact-eyebrow{font-size:12px;line-height:1.5;font-stretch:125%;letter-spacing:2px;color:var(--site-accent-text)}
+.contact-main-grid{display:grid;grid-template-columns:minmax(0,674px) minmax(260px,1fr);align-items:start;gap:64px}
+.contact-form-panel{min-width:0;scroll-margin-top:calc(var(--site-header-height) + 20px)}
+rentool-contact-widget{display:block;width:100%;--rentool-font:Archivo,system-ui,sans-serif;--rentool-primary:var(--site-ink);--rentool-primary-fg:var(--site-surface);--rentool-action-primary-fg:var(--site-surface);--rentool-bg:var(--site-surface);--rentool-text:var(--site-ink);--rentool-border:var(--site-control-border);--rentool-radius:0px;--rentool-radius-inner:var(--site-radius-control);--rentool-radius-button:var(--site-radius-control);--rentool-radius-input:var(--site-radius-control);--rentool-radius-block:var(--site-radius-card);--rentool-radius-modal:var(--site-radius-dialog)}
+.contact-privacy{margin:20px 0 0;font-size:13px;line-height:1.5;color:var(--site-text-muted)}
+.contact-privacy a{text-decoration:underline;text-underline-offset:3px;color:inherit}
+.contact-details{min-width:0;padding-top:8px}
+.contact-details h3{margin:0 0 24px;font-size:18px;line-height:1.4;font-stretch:125%;letter-spacing:1px}
+.contact-details-list{margin:0 0 20px}
+.contact-details-list>div{padding:18px 0;border-top:1px solid var(--site-border)}
+.contact-details dt{margin-bottom:8px;font-size:12px;line-height:1.5;font-stretch:125%;letter-spacing:1px;text-transform:uppercase;color:var(--site-text-muted)}
+.contact-details dd{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:0;font-size:16px;line-height:1.6;overflow-wrap:anywhere;color:var(--site-ink)}
+.contact-details address{font-style:normal}
+.contact-phone{font-size:22px;font-weight:700}
+.contact-text-link,.footer-contact-link{align-self:flex-start;color:var(--site-accent-text);font-size:13px;line-height:1.6;text-decoration:underline;text-underline-offset:4px}
+.contact-access{border-block:1px solid var(--site-border);background:var(--site-surface-soft)}
+.contact-access-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:48px}
+.contact-access-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.contact-access-copy{display:flex;flex-direction:column;gap:20px;min-width:0}
+.contact-access-point h3{margin:0 0 6px;font-size:17px;line-height:1.5}
+.contact-help-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.contact-help-card{display:flex;flex-direction:column;gap:16px;min-width:0;padding:24px;border:1px solid var(--site-border);background:var(--site-surface);color:var(--site-ink)}
+.contact-help-card:hover{background:var(--site-surface-soft);color:var(--site-ink);border-color:var(--site-control-border)}
+.contact-help-card h3{margin:0;font-size:18px;line-height:1.5;font-stretch:125%;overflow-wrap:anywhere}
+.contact-help-card p{margin:0;font-size:15px;line-height:1.65;color:var(--site-text-secondary)}
+.contact-help-card>span{margin-top:auto;color:var(--site-accent-text);font-size:13px;line-height:1.5}
+@media (max-width:1100px){
+  .contact-main-grid{grid-template-columns:minmax(0,1fr);gap:36px}
+  .contact-details-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:32px}
+  .contact-access-grid{gap:32px}
+}
+@media (max-width:760px){
+  .contact-breadcrumb{font-size:11px}
+  .contact-hero-copy{font-size:15px}
+  .contact-section{padding:40px 20px}
+  .contact-access-grid,.contact-help-grid{grid-template-columns:minmax(0,1fr)}
+  .contact-details-list{grid-template-columns:minmax(0,1fr)}
+  .contact-access-copy p,.contact-section-intro p{font-size:15px}
+  .contact-access-photo{aspect-ratio:3/2}
+}
