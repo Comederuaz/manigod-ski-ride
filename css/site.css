@@ -582,3 +582,22 @@ rentool-contact-widget{display:block;width:100%;--rentool-font:Archivo,system-ui
   .contact-access-copy p,.contact-section-intro p{font-size:15px}
   .contact-access-photo{aspect-ratio:3/2}
 }
+
+/* Accueil mobile : recadrage centré sur le skieur, voile allégé, pas de zoom animé */
+@media (max-width:760px){
+  .home-page .hero--home .hero__media img{animation:none;transform:none;object-position:50% 70%!important}
+  .home-page .hero--home .hero__content{margin-top:-4vw}
+  .home-page .hero--home .hero__media::after{background:linear-gradient(0deg,#FFFFFF 0%,rgba(255,255,255,.45) 14%,rgba(255,255,255,0) 32%)}
+}
+/* Cartes Stöckli / Van Deer mobile : fond clair lisible (plus de bandeau noir) */
+@media (max-width:760px){
+  html body div[style*="flex: 1 1 420px"][style*="overflow: hidden"][style*="aspect-ratio"]:has(>img){background:#F3F5F4!important;background-color:#F3F5F4!important}
+  div[style*="flex: 1 1 420px"][style*="overflow: hidden"]>span:not([aria-hidden]){color:#0C1C1F!important}
+  div[style*="flex: 1 1 420px"][style*="overflow: hidden"]>span[style*="font-size: 14px"]{color:#3E4B4D!important}
+}
+/* Cartes activités : voile plus dense pour que le texte blanc reste lisible sur les photos claires */
+html body div[style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[aria-hidden="true"]{height:100%!important;background:linear-gradient(0deg,rgba(6,16,18,.92) 22%,rgba(6,16,18,.45) 62%,rgba(6,16,18,.08))!important}
+/* Fil d'Ariane masqué sur mobile : il tombait sur la photo et restait illisible */
+@media (max-width:760px){
+  .hero__content>span:first-child:has(>a[href$="index.html"]),.hero__content>.contact-breadcrumb{display:none!important}
+}
