@@ -140,6 +140,58 @@ h2{font-size:var(--site-h2-font-size);line-height:1.15;letter-spacing:0}
 /* Clip page overflow without trapping the widget's native sticky filters. */
 .rental-page .topo{overflow:clip}
 .rental-catalog rentool-rental-widget{display:block;width:100%;max-width:none;--rentool-rental-filters-max-width:1280px}
+
+/* Rental cards use the public Rentool presentation contract (CSS parts v1). */
+.rental-catalog rentool-rental-widget{
+  --rentool-font:Archivo,system-ui,sans-serif;
+  --rentool-title-font:Archivo,system-ui,sans-serif;
+  --rentool-text-muted:var(--site-text-secondary);
+  --rentool-link:var(--site-accent-text);
+  --rentool-focus-ring:var(--site-focus);
+}
+.rental-catalog rentool-rental-widget::part(card){
+  border-color:var(--site-border);
+  border-radius:var(--site-radius-card);
+  background:var(--site-surface);
+}
+.rental-catalog rentool-rental-widget::part(text-title){
+  font-family:Archivo,system-ui,sans-serif;
+  font-stretch:125%;
+  font-size:20px;
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:.3px;
+  text-transform:uppercase;
+  color:var(--site-ink);
+}
+.rental-catalog rentool-rental-widget::part(amount){
+  font-family:Archivo,system-ui,sans-serif;
+  font-weight:800;
+  letter-spacing:-.5px;
+  color:var(--site-ink);
+}
+.rental-catalog rentool-rental-widget::part(media-details-button){
+  color:var(--site-accent-text);
+  font-family:Archivo,system-ui,sans-serif;
+  font-weight:600;
+}
+.rental-catalog rentool-rental-widget::part(reserve-button){
+  min-height:48px;
+  border-radius:var(--site-radius-control);
+  font-family:Archivo,system-ui,sans-serif;
+  font-stretch:125%;
+  font-size:13px;
+  font-weight:700;
+  line-height:1.4;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  background:var(--site-accent);
+  border-color:var(--site-accent);
+  color:var(--site-ink);
+}
+.rental-catalog rentool-rental-widget::part(reserve-button)::after{content:"→";margin-inline-start:.4em}
+.rental-catalog rentool-rental-widget::part(reserve-button):hover:not(:disabled){background:var(--site-accent-hover);border-color:var(--site-accent-hover)}
+.rental-catalog rentool-rental-widget::part(reserve-button):focus-visible{outline:2px solid var(--site-focus);outline-offset:3px}
 .rental-search-frame rentool-rental-search{--rentool-search-height:66px}
 .rental-search-frame rentool-rental-search.is-ready{height:66px}
 @container (max-width:520px){

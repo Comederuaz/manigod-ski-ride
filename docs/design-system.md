@@ -127,6 +127,21 @@ Utiliser les composants officiels pour recherche, catalogue, panier et compte. L
 
 Les sélections sombres utilisent `--rentool-secondary`, `--rentool-secondary-fg`, `--rentool-control-active` et `--rentool-control-active-fg`, centralisés dans la feuille commune. Les cartes utilisent `reserve-button-style="solid"` : fond orange et texte encre, via `--rentool-primary-fg` et `--rentool-action-primary-fg`.
 
+### Cartes du catalogue
+
+L’habillage des cartes est défini dans `css/site.css`, sous `.rental-catalog`, avec les variables et les parts publiques du contrat de présentation Rentool v1 (`rentool://docs/widget-styling.md`, disponible le 8 novembre 2026). Il s’applique aux pages Location FR/EN, sans injection de styles dans le Shadow DOM ni modification des libellés métier.
+
+| Élément | Présentation |
+| --- | --- |
+| Carte (`card`) | Surface blanche, contour `--site-border`, angles droits |
+| Titres du widget, dont les gammes (`text-title`) | Archivo, chasse 125 %, 20 px, graisse 800, interligne 1,2, espacement 0,3 px, majuscules, encre |
+| Texte courant | Archivo ; texte secondaire `--site-text-secondary` |
+| Prix (`amount`) | Archivo, graisse 800, espacement −0,5 px, encre ; taille et unité natives |
+| Photos et détails (`media-details-button`) | Archivo, graisse 600, accent texte |
+| Réserver (`reserve-button`) | Fond orange, texte encre, Archivo 13 px, chasse 125 %, graisse 700, interligne 1,4, espacement 1,5 px, majuscules et flèche décorative ; hauteur minimale 48 px |
+
+Le survol du bouton utilise `--site-accent-hover` ; le focus conserve un contour visible. Ces styles ciblent les parts précises des cartes : les filtres, les boutons du panier et du compte ainsi que les textes descriptifs ne sont pas mis en majuscules. Les états désactivés et de chargement restent natifs. Les dimensions, le carrousel, les disponibilités et les choix d’accessoires restent gérés par Rentool.
+
 ### Recherche et stabilité du chargement
 
 La barre de recherche a une bordure fine `--site-control-border`, sans ombre visible. Son cadre réserve au moins 70 px dès le premier affichage. La barre définitive mesure 66 px, puis 70 px lorsque son conteneur mesure au plus 520 px. La hauteur finale n’est appliquée qu’après `rentool-ready`, pour laisser les erreurs initiales visibles.
