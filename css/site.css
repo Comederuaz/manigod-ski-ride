@@ -603,3 +603,6 @@ html body div[style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[aria-hid
 }
 /* Formulaire de contact : titre de groupe « Question générale » masqué (visuel uniquement) */
 rentool-contact-widget::part(element-legend){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Bootfitting : décale la photo du bandeau vers la droite pour que la machine de bootfitting sorte du fondu */
+@media (min-width:761px){img[data-f="versant-nord-thones-espace-bootfitting"]{object-position:180px 50%!important;-webkit-mask-image:linear-gradient(90deg,transparent 180px,#000 340px);mask-image:linear-gradient(90deg,transparent 180px,#000 340px)}}
