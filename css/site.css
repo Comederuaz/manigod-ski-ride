@@ -166,9 +166,9 @@ rentool-rental-search::part(dates-trigger),
 .site-header.is-sticky.is-visible{transform:translateY(0);transition:transform .34s cubic-bezier(.2,.7,.2,1)}
 .brand{display:flex;align-items:center;gap:14px;white-space:nowrap}
 .brand img{width:68px;height:68px;display:block}
-.brand b{display:block;font-stretch:125%;font-weight:800;font-size:19px;line-height:20px;letter-spacing:.5px}
-.brand small{display:block;font-stretch:125%;font-weight:500;font-size:15px;line-height:20px}
-.brand em{display:block;font-style:normal;font-stretch:125%;font-weight:400;font-size:10px;letter-spacing:2.5px;color:var(--site-text-muted);margin-top:2px}
+.brand b{display:block;font-stretch:125%;font-weight:900;font-size:23px;line-height:23px;letter-spacing:0}
+.brand small{display:block;font-stretch:125%;font-weight:500;font-size:23px;line-height:25px;letter-spacing:0}
+.brand em{display:block;font-style:normal;font-stretch:125%;font-weight:400;font-size:9px;letter-spacing:3.2px;color:var(--site-text-muted);margin-top:4px}
 .site-nav{display:flex;align-items:center;gap:10px 24px;font-stretch:125%;font-size:13px;letter-spacing:1.2px}
 .site-nav a.is-active,.nav-services__toggle.is-active{color:var(--site-accent-text)}
 .nav-services{position:static}
@@ -306,9 +306,9 @@ rentool-rental-search::part(dates-trigger),
   .site-header{padding:14px 16px;gap:10px;--site-header-control-gap:4px;--site-header-cart-width:42px;--site-header-account-width:42px}
   .brand{gap:10px}
   .brand img{width:54px;height:54px}
-  .brand b{font-size:15px;line-height:15px}
-  .brand small{font-size:11px;line-height:15px}
-  .brand em{font-size:7px;letter-spacing:1.5px}
+  .brand b{font-size:18px;line-height:18px}
+  .brand small{font-size:18px;line-height:20px}
+  .brand em{font-size:7px;letter-spacing:2.4px;margin-top:3px}
   .header-actions .btn-book{display:none}
   .site-header.open .site-nav{padding:4px 20px 20px}
   .hero-booking{padding:16px;margin-top:14px}
@@ -506,9 +506,9 @@ footer{background:#F3F5F4!important;border-top:1px solid #DDE2E1!important}
   .site-header{padding:10px 10px;gap:6px;--site-header-control-gap:2px}
   .brand{gap:6px}
   .brand img{width:40px;height:40px}
-  .brand b{font-size:11px;line-height:13px}
-  .brand small{font-size:9px;line-height:13px}
-  .brand em{font-size:6px;letter-spacing:.6px;margin-top:0}
+  .brand b{font-size:13px;line-height:13px}
+  .brand small{font-size:13px;line-height:15px}
+  .brand em{font-size:5.5px;letter-spacing:1.6px;margin-top:2px}
   .lang{min-width:40px;height:40px;padding:0 8px;font-size:11px}
   .burger{width:40px;height:40px;flex-basis:40px}
 }
