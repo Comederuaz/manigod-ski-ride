@@ -601,3 +601,5 @@ html body div[style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[aria-hid
 @media (max-width:760px){
   .hero__content>span:first-child:has(>a[href$="index.html"]),.hero__content>.contact-breadcrumb{display:none!important}
 }
+/* Formulaire de contact : titre de groupe « Question générale » masqué (visuel uniquement) */
+rentool-contact-widget::part(element-legend){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
