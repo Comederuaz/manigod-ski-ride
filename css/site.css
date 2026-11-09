@@ -606,3 +606,6 @@ rentool-contact-widget::part(element-legend){position:absolute;width:1px;height:
 
 /* Bootfitting : décale la photo du bandeau vers la droite pour que la machine de bootfitting sorte du fondu */
 @media (min-width:761px){.hero__media img[data-f="versant-nord-thones-espace-bootfitting"]{object-position:180px 50%!important;-webkit-mask-image:linear-gradient(90deg,transparent 180px,#000 340px);mask-image:linear-gradient(90deg,transparent 180px,#000 340px)}}
+
+/* Titres de page : pas d italique */
+h1 i,h1 em,.page-title i,.page-title em{font-style:normal}
