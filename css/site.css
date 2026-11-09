@@ -351,7 +351,7 @@ rentool-rental-search::part(dates-trigger),
 
   /* Espacements et marges */
   section:not(.hero){padding-top:36px!important;padding-bottom:24px!important}
-  section[style*="padding: 90px 40px"],section[style*="padding: 0 40px"],section[style*="40px 40px"],section[style*="padding: 100px 40px"]{padding-left:20px!important;padding-right:20px!important}
+  section[style*="padding: 90px 40px"],section[style*="padding: 0 40px"],section[style*="40px 40px"],section[style*="padding: 100px 40px"],section[style*="px 40px"]{padding-left:20px!important;padding-right:20px!important}
   section[style*="gap: 28px"],section[style*="gap: 32px"],section[style*="gap: 36px"],section[style*="gap: 40px"],section[style*="gap: 48px"],section[style*="gap: 56px"]{gap:14px!important}
 
   /* Grilles */
@@ -365,7 +365,7 @@ rentool-rental-search::part(dates-trigger),
   .strip-loc img:nth-child(3){display:block!important;aspect-ratio:4/3!important}
 
   /* Cartes d'activités */
-  [style*="flex-wrap: wrap; gap: 20px"]{gap:10px!important}
+  [style*="flex-wrap: wrap; gap: 20px"],h2+[style*="flex-wrap: wrap; gap: 24px"]{gap:10px!important}
   [style*="flex: 1 1 260px"]{flex:1 1 40%!important;height:180px!important;padding:12px!important;gap:4px!important}
   [style*="flex: 1 1 260px"]>span[style*="font-weight: 800"]{font-size:13px!important;line-height:16px!important;letter-spacing:0!important}
   [style*="flex: 1 1 260px"]>span[style*="display: flex"]{flex-wrap:wrap!important;gap:6px 12px!important}
