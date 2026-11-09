@@ -165,7 +165,7 @@ rentool-rental-search::part(dates-trigger),
 .site-header.is-sticky{position:fixed;top:0;left:0;right:0;transform:translateY(-105%);transition:none;background:var(--site-header-sticky-surface);box-shadow:0 8px 28px rgba(12,28,31,.1)}
 .site-header.is-sticky.is-visible{transform:translateY(0);transition:transform .34s cubic-bezier(.2,.7,.2,1)}
 .brand{display:flex;align-items:center;gap:14px;white-space:nowrap}
-.brand img{width:54px;height:54px;display:block}
+.brand img{width:68px;height:68px;display:block}
 .brand b{display:block;font-stretch:125%;font-weight:800;font-size:19px;line-height:20px;letter-spacing:.5px}
 .brand small{display:block;font-stretch:125%;font-weight:500;font-size:15px;line-height:20px}
 .brand em{display:block;font-style:normal;font-stretch:125%;font-weight:400;font-size:10px;letter-spacing:2.5px;color:var(--site-text-muted);margin-top:2px}
@@ -305,7 +305,7 @@ rentool-rental-search::part(dates-trigger),
   /* En-tête */
   .site-header{padding:14px 16px;gap:10px;--site-header-control-gap:4px;--site-header-cart-width:42px;--site-header-account-width:42px}
   .brand{gap:10px}
-  .brand img{width:44px;height:44px}
+  .brand img{width:54px;height:54px}
   .brand b{font-size:15px;line-height:15px}
   .brand small{font-size:11px;line-height:15px}
   .brand em{font-size:7px;letter-spacing:1.5px}
@@ -505,7 +505,7 @@ footer{background:#F3F5F4!important;border-top:1px solid #DDE2E1!important}
   :root{--site-header-height:63px}
   .site-header{padding:10px 10px;gap:6px;--site-header-control-gap:2px}
   .brand{gap:6px}
-  .brand img{width:32px;height:32px}
+  .brand img{width:40px;height:40px}
   .brand b{font-size:11px;line-height:13px}
   .brand small{font-size:9px;line-height:13px}
   .brand em{font-size:6px;letter-spacing:.6px;margin-top:0}
