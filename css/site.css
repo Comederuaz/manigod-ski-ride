@@ -631,3 +631,12 @@ img[data-f="logo-van-deer"],img[data-f="logo-arva"],img[data-f="logo-stockli"]{o
 .brand:hover::after,.brand:focus-visible::after{opacity:1}
 @media (max-width:760px){.brand::after{height:44px}}
 @media (max-width:380px){.brand::after{height:38px}}
+
+/* Mobile : cartes d'activités — toute la carte mène à « Découvrir », seul « Réserver » reste visible */
+@media (max-width:760px){
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]>a:last-child{font-size:0!important;padding:0!important;border:0!important;position:static}
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]>a:last-child::after{content:"";position:absolute;inset:0;z-index:1}
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]{position:static!important}
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]>a:first-child{position:relative;z-index:2}
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="font-weight: 800"]::after{content:" →";font-weight:400}
+}
