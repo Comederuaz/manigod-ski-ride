@@ -634,11 +634,25 @@ img[data-f="logo-van-deer"],img[data-f="logo-arva"],img[data-f="logo-stockli"]{o
 @media (max-width:760px){.brand::after{height:44px}}
 @media (max-width:380px){.brand::after{height:38px}}
 
-/* Mobile : cartes d'activités — toute la carte mène à « Découvrir », seul « Réserver » reste visible */
-@media (max-width:760px){
-  [style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]>a:last-child{font-size:0!important;padding:0!important;border:0!important;position:static}
-  [style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]>a:last-child::after{content:"";position:absolute;inset:0;z-index:1}
-  [style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]{position:static!important}
-  [style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]>a:first-child{position:relative;z-index:2}
-  [style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="font-weight: 800"]::after{content:" →";font-weight:400}
+/* Cartes d'activités : toute la carte mène à la page activité (« Découvrir » masqué), « Réserver » reste un bouton à part */
+[style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]>a:last-child{font-size:0!important;padding:0!important;border:0!important;position:static}
+[style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]>a:last-child::after{content:"";position:absolute;inset:0;z-index:1}
+[style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]{position:static!important}
+[style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]>a:first-child{position:relative;z-index:2;transition:background-color .2s,transform .2s,box-shadow .2s}
+[style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="display: flex"]>a:first-child:hover{background:#FFFFFF!important;transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.35)}
+[style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="font-weight: 800"]::after{content:"→";display:inline-block;margin-left:.3em;font-weight:400;transition:transform .25s}
+[style*="flex: 1 1 260px"][style*="overflow: hidden"]>img{transition:transform .5s ease}
+[style*="flex: 1 1 260px"][style*="overflow: hidden"]>span[style*="font-weight: 800"]{transition:color .2s}
+@media (hover:hover){
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]:hover>img{transform:scale(1.06)}
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]:hover>span[style*="font-weight: 800"]{color:#F0A06A!important}
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]:hover>span[style*="font-weight: 800"]::after{transform:translateX(6px)}
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]:has(>span>a:first-child:hover)>img{transform:none}
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]:has(>span>a:first-child:hover)>span[style*="font-weight: 800"]{color:#EDEDE8!important}
+  [style*="flex: 1 1 260px"][style*="overflow: hidden"]:has(>span>a:first-child:hover)>span[style*="font-weight: 800"]::after{transform:none}
 }
+
+/* Ligne Pass multi-activité : encadrée comme les blocs */
+a.ligne-info[href*="pass-multi-activite"]{display:block;align-self:stretch!important;border:1px solid #DDE2E1!important;background:#FFFFFF!important;box-shadow:0 8px 24px rgba(12,28,31,.06)!important;padding:20px 24px!important;transition:border-color .2s,box-shadow .2s}
+a.ligne-info[href*="pass-multi-activite"]:hover{border-color:#F0A06A!important;box-shadow:0 10px 28px rgba(12,28,31,.10)!important}
+@media (max-width:760px){a.ligne-info[href*="pass-multi-activite"]{padding:14px 16px!important}}
