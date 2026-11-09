@@ -466,7 +466,7 @@ div[style*="border: 1px solid #DDE2E1"]:not([style*="background"]),a[style*="bor
 :is([style*="overflow: hidden"]:has(>img[style*="position: absolute"])) a[style*="background"]{color:#0C1C1F!important}
 /* logos blancs -> sombres (garde le rouge Stöckli/Van Deer) */
 .brand img,footer img[data-f*="chamois"]{filter:invert(1)}
-img[data-f*="logo-"]:not([style*="filter"]):not([data-f*="esf"]):not([data-f*="labellemontagne"]):not([data-f*="guides"]){filter:invert(1) hue-rotate(180deg)}
+img[data-f*="logo-"]:not([style*="filter"]):not([data-f*="esf"]):not([data-f*="labellemontagne"]):not([data-f*="guides"]):not([data-f*="van-deer"]):not([data-f*="arva"]):not([data-f*="stockli"]){filter:invert(1) hue-rotate(180deg)}
 /* boutons galerie */
 .galerie button{background:rgba(255,255,255,.85)!important;color:#0C1C1F!important;border-color:#C5CFCE!important}
 /* ombre légère des blocs */
@@ -609,3 +609,6 @@ rentool-contact-widget::part(element-legend){position:absolute;width:1px;height:
 
 /* Titres de page : pas d italique */
 h1 i,h1 em,.page-title i,.page-title em{font-style:normal}
+
+/* Logos en couleur : pas de voile */
+img[data-f="logo-van-deer"],img[data-f="logo-arva"],img[data-f="logo-stockli"]{opacity:1!important}
