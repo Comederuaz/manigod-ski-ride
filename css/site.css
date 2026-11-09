@@ -226,8 +226,8 @@ rentool-rental-search::part(dates-trigger),
    Apply the crop only after rentool-ready, so initial errors remain fully visible. */
 .rental-search-frame{width:100%;min-height:70px;container-type:inline-size}
 .rental-search-frame rentool-rental-search::part(loading){margin-bottom:0}
-.hero--rental{min-height:calc(clamp(480px,34vw,560px) + var(--site-header-height))}
-.hero--rental .hero__content{padding:36px 40px 32px;gap:18px}
+.hero--rental{min-height:calc(clamp(360px,25vw,420px) + var(--site-header-height))}
+.hero--rental .hero__content{padding:24px 40px 24px;gap:16px}
 .rental-hero-booking{display:flex;flex-direction:column;gap:16px;width:min(100%,540px);margin-top:6px;scroll-margin-top:110px}
 .rental-hero-offer{font-family:Archivo,sans-serif;font-stretch:125%;font-size:12px;line-height:1.5;letter-spacing:1.5px;color:var(--site-accent-text)}
 .rental-catalog{padding:32px 0 40px;background:var(--site-surface-soft);border-block:1px solid var(--site-border)}
@@ -499,7 +499,7 @@ footer{background:#F3F5F4!important;border-top:1px solid #DDE2E1!important}
 }
 @media (max-width:760px){
   .home-page .hero--home .hero__media{left:0;aspect-ratio:6/5;height:auto}
-  .rental-page .hero--rental .hero__media{aspect-ratio:auto;height:calc(56.25vw + var(--site-header-height))}
+  .rental-page .hero--rental .hero__media{aspect-ratio:auto;height:calc(38vw + var(--site-header-height))}
 }
 @media (max-width:380px){
   :root{--site-header-height:63px}
