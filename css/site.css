@@ -360,7 +360,9 @@ rentool-rental-search::part(dates-trigger),
   [style*="repeat(4, minmax(0, 1fr))"] img{height:auto!important;aspect-ratio:4/3;object-fit:cover}
   [style*="minmax(180px, 1fr)"],[style*="minmax(min(180px, 100%), 1fr)"],[style*="minmax(160px, 1fr)"],[style*="minmax(min(160px, 100%), 1fr)"]{grid-template-columns:repeat(3,1fr)!important;gap:8px!important}
   [style*="minmax(180px, 1fr)"]>div,[style*="minmax(min(180px, 100%), 1fr)"]>div,[style*="minmax(160px, 1fr)"]>div,[style*="minmax(min(160px, 100%), 1fr)"]>div{height:64px!important}
-  .strip-loc{grid-template-columns:1fr 1fr}
+  .strip-loc{grid-template-columns:1fr}
+  .strip-loc img{display:none!important}
+  .strip-loc img:nth-child(3){display:block!important;aspect-ratio:4/3!important}
 
   /* Cartes d'activités */
   [style*="flex-wrap: wrap; gap: 20px"]{gap:10px!important}
