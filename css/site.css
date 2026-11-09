@@ -624,3 +624,10 @@ img[data-f="logo-van-deer"],img[data-f="logo-arva"],img[data-f="logo-stockli"]{o
   .rental-hero-booking{gap:12px;margin-top:0}
   .rental-catalog{padding-top:16px}
 }
+
+/* Logo : texte orange au survol (comme les liens) */
+.brand{position:relative}
+.brand::after{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);height:72px;aspect-ratio:2674/716;background:var(--site-accent-text);-webkit-mask:url(../images/manigod-ski-ride-logo-horizontal.png) no-repeat 0 0/100% 100%;mask:url(../images/manigod-ski-ride-logo-horizontal.png) no-repeat 0 0/100% 100%;clip-path:inset(0 0 0 28%);opacity:0;transition:opacity .2s;pointer-events:none}
+.brand:hover::after,.brand:focus-visible::after{opacity:1}
+@media (max-width:760px){.brand::after{height:44px}}
+@media (max-width:380px){.brand::after{height:38px}}
