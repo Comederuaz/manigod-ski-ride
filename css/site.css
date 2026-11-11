@@ -742,10 +742,6 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
   .fam-steps>div>span:last-child,.fam-card>span:last-child{font-size:14px!important;line-height:21px!important}
   .fam-mosaic{gap:0 10px!important}
   .fam-mosaic>.fam-ph{grid-column:auto;aspect-ratio:1/1;margin:14px 0}
-  .fam-mosaic>:nth-child(1),.fam-mosaic>:nth-child(3),.fam-mosaic>:nth-child(4),.fam-mosaic>:nth-child(5){order:1}
-  .fam-mosaic>:nth-child(2),.fam-mosaic>:nth-child(7){order:2}
-  .fam-mosaic>:nth-child(6),.fam-mosaic>:nth-child(8),.fam-mosaic>:nth-child(10),.fam-mosaic>:nth-child(11){order:3}
-  .fam-mosaic>:nth-child(9),.fam-mosaic>:nth-child(12){order:4}
   .fam-ph--legende>span{padding:30px 10px 10px;font-size:12px;line-height:17px}
   .fam-ph--legende>span>b{font-size:12px}
 }
@@ -753,3 +749,11 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
 .cases-6>div:nth-child(5){background:#0A1416}
 .cases-6>div:nth-child(5):hover>img{transform:none!important}
 html body .cases-6>div:nth-child(5)>span[aria-hidden="true"]{background:linear-gradient(0deg,#0A1416 11%,rgba(6,16,18,.72) 34%,rgba(6,16,18,.25) 62%,rgba(6,16,18,.05))!important}
+
+@media (min-width:1001px){.fam-ph--large{grid-column:span 2}}
+@media (max-width:760px){
+  .fam-mosaic>:nth-child(1),.fam-mosaic>:nth-child(3),.fam-mosaic>:nth-child(4),.fam-mosaic>:nth-child(5){order:1}
+  .fam-mosaic>:nth-child(2),.fam-mosaic>:nth-child(7){order:2}
+  .fam-mosaic>:nth-child(6),.fam-mosaic>:nth-child(9),.fam-mosaic>:nth-child(10){order:3}
+  .fam-mosaic>:nth-child(8),.fam-mosaic>:nth-child(11){order:4}
+}
