@@ -703,9 +703,9 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
   section:has(>.cases-6){padding-top:70px!important;gap:20px!important;scroll-margin-top:80px}
 }
 .cases-6>div:nth-child(2)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.85) 12%,rgba(6,16,18,.15) 55%,rgba(6,16,18,0))!important}
-.cases-6>div:nth-child(3)>img{object-position:50% 93%!important}
+.cases-6>div:nth-child(3)>img{object-position:50% 80%!important}
 .cases-6>div:nth-child(3)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.85) 10%,rgba(6,16,18,.12) 50%,rgba(6,16,18,0))!important}
-@media (max-width:760px){.cases-6>div:nth-child(3)>img{object-position:50% 100%!important}}
+@media (max-width:760px){.cases-6>div:nth-child(3)>img{object-position:50% 90%!important}}
 /* Page famille : bandeau de photos */
 .fam-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .fam-photos img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
@@ -749,3 +749,7 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
   .fam-ph--legende>span{padding:30px 10px 10px;font-size:12px;line-height:17px}
   .fam-ph--legende>span>b{font-size:12px}
 }
+.cases-6>div:nth-child(5)>img{object-position:50% 100%!important;height:130%!important;top:auto!important;bottom:9%!important}
+.cases-6>div:nth-child(5){background:#0A1416}
+.cases-6>div:nth-child(5):hover>img{transform:none!important}
+html body .cases-6>div:nth-child(5)>span[aria-hidden="true"]{background:linear-gradient(0deg,#0A1416 11%,rgba(6,16,18,.72) 34%,rgba(6,16,18,.25) 62%,rgba(6,16,18,.05))!important}
