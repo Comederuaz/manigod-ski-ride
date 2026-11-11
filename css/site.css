@@ -762,3 +762,5 @@ html body .cases-6>div:nth-child(5)>span[aria-hidden="true"]{background:linear-g
 }
 html body .cases-6>div:nth-child(2)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.88) 14%,rgba(6,16,18,.35) 46%,rgba(6,16,18,0) 70%)!important}
 @media (max-width:760px){.cases-6>div:nth-child(2)>img{object-position:62% 30%!important}}
+html body .cases-6>div:nth-child(4)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.82) 10%,rgba(6,16,18,.2) 48%,rgba(6,16,18,0) 70%)!important}
+.cases-6>div:nth-child(4)>img{object-position:50% 78%!important;filter:brightness(1.18)}
