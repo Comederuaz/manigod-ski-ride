@@ -659,3 +659,16 @@ a.ligne-info[href*="pass-multi-activite"]:hover{border-color:#F0A06A!important;b
 
 /* Catalogue Rentool : filtres « Matériel » puis « Type » toujours l'un sous l'autre */
 rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-start}
+
+/* Accueil : atouts (4 cartes) — compacts sur mobile */
+.atout--lien:hover b { color: #C8632A; }
+@media (max-width: 640px) {
+  .atouts { grid-template-columns: 1fr 1fr !important; gap: 16px 14px !important; }
+  .atouts .atout { gap: 6px !important; padding-top: 12px !important; }
+  .atouts .atout-num { display: none; }
+  .atouts .atout b { font-size: 13px !important; letter-spacing: 0.3px !important; }
+  .atouts .atout-txt { font-size: 13px !important; line-height: 19px !important; }
+}
+.atouts>a.atout--lien{background:#FFFFFF;border:1px solid #E2E7E6!important;box-shadow:0 2px 14px rgba(12,28,31,.06);padding:22px 24px 24px!important;transition:border-color .2s}
+.atouts>a.atout--lien:hover{border-color:#C8632A!important}
+@media (max-width: 640px){.atouts>a.atout--lien{padding:16px 18px 18px!important;gap:6px!important}.atouts>.atout{padding:12px 14px 14px!important}}
