@@ -710,3 +710,24 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
 .fam-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .fam-photos img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
 @media (max-width:760px){.fam-photos{grid-template-columns:1fr 1fr;gap:10px}.fam-photos img:first-child{grid-column:1/-1;aspect-ratio:3/2}}
+
+/* Page famille : journée (étapes + photo) et mosaïque cartes/photos */
+.fam-jour{display:grid;grid-template-columns:1.7fr 1fr;gap:28px;align-items:stretch}
+.fam-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;align-content:start}
+.fam-jour__photo{width:100%;height:100%;min-height:320px;object-fit:cover;object-position:35% 30%;display:block}
+.fam-mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(230px,auto);gap:20px}
+.fam-ph{position:relative;overflow:hidden;min-height:230px}
+.fam-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:1000px){
+  .fam-jour{grid-template-columns:1fr}
+  .fam-jour__photo{order:-1;height:auto;min-height:0;aspect-ratio:3/2}
+  .fam-steps{grid-template-columns:repeat(2,1fr)}
+  .fam-mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto;gap:12px}
+  .fam-mosaic>.fam-card{grid-column:1/-1}
+  .fam-ph{min-height:0;aspect-ratio:16/9;grid-column:1/-1}
+}
+@media (max-width:560px){.fam-steps{grid-template-columns:1fr;gap:18px}}
+.fam-ph--legende>span{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(0deg,rgba(6,16,18,.85) 35%,rgba(6,16,18,0));color:#FFFFFF;font-size:14px;line-height:21px;display:flex;flex-direction:column;gap:4px}
+.fam-ph--legende>span>b{font-family:Archivo,sans-serif;font-stretch:125%;font-size:15px;letter-spacing:.5px}
+.fam-ico{width:46px;height:46px;border-radius:50%;background:#F7E7DA;color:#C8632A;display:flex;align-items:center;justify-content:center;flex:none}
+.fam-ico svg{width:22px;height:22px;display:block}
