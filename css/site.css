@@ -760,3 +760,5 @@ html body .cases-6>div:nth-child(5)>span[aria-hidden="true"]{background:linear-g
   .fam-mosaic>:nth-child(8),.fam-mosaic>:nth-child(9){order:3}
   .fam-mosaic>:nth-child(7),.fam-mosaic>:nth-child(10){order:4}
 }
+html body .cases-6>div:nth-child(2)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.88) 14%,rgba(6,16,18,.35) 46%,rgba(6,16,18,0) 70%)!important}
+@media (max-width:760px){.cases-6>div:nth-child(2)>img{object-position:62% 30%!important}}
