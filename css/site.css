@@ -695,3 +695,18 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
   .marques-logos{grid-template-columns:repeat(2,1fr)!important;grid-auto-rows:1fr}
   .marques-logos>div{height:auto!important;min-height:70px}
 }
+
+/* Accueil : 6 cases activités — 3 par ligne sur ordinateur, 2 sur mobile */
+@media (min-width:900px){
+  .cases-6>div{flex:1 1 30%!important;height:clamp(220px,calc((100vh - 205px)/2),420px)!important}
+  .cases-6>div>span[style*="font-weight: 800"]{font-size:22px!important;line-height:26px!important}
+  section:has(>.cases-6){padding-top:70px!important;gap:20px!important;scroll-margin-top:80px}
+}
+.cases-6>div:nth-child(2)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.85) 12%,rgba(6,16,18,.15) 55%,rgba(6,16,18,0))!important}
+.cases-6>div:nth-child(3)>img{object-position:50% 93%!important}
+.cases-6>div:nth-child(3)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.85) 10%,rgba(6,16,18,.12) 50%,rgba(6,16,18,0))!important}
+@media (max-width:760px){.cases-6>div:nth-child(3)>img{object-position:50% 100%!important}}
+/* Page famille : bandeau de photos */
+.fam-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.fam-photos img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+@media (max-width:760px){.fam-photos{grid-template-columns:1fr 1fr;gap:10px}.fam-photos img:first-child{grid-column:1/-1;aspect-ratio:3/2}}
