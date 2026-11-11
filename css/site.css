@@ -702,10 +702,10 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
   .cases-6>div>span[style*="font-weight: 800"]{font-size:22px!important;line-height:26px!important}
   section:has(>.cases-6){padding-top:70px!important;gap:20px!important;scroll-margin-top:80px}
 }
-.cases-6>div:nth-child(2)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.85) 12%,rgba(6,16,18,.15) 55%,rgba(6,16,18,0))!important}
-.cases-6>div:nth-child(3)>img{object-position:50% 80%!important}
-.cases-6>div:nth-child(3)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.85) 10%,rgba(6,16,18,.12) 50%,rgba(6,16,18,0))!important}
-@media (max-width:760px){.cases-6>div:nth-child(3)>img{object-position:50% 90%!important}}
+.cases-6>div.x-famille>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.85) 12%,rgba(6,16,18,.15) 55%,rgba(6,16,18,0))!important}
+.cases-6>div:nth-child(2)>img{object-position:50% 80%!important}
+.cases-6>div:nth-child(2)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.85) 10%,rgba(6,16,18,.12) 50%,rgba(6,16,18,0))!important}
+@media (max-width:760px){.cases-6>div:nth-child(2)>img{object-position:50% 90%!important}}
 /* Page famille : bandeau de photos */
 .fam-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .fam-photos img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
@@ -745,10 +745,10 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
   .fam-ph--legende>span{padding:30px 10px 10px;font-size:12px;line-height:17px}
   .fam-ph--legende>span>b{font-size:12px}
 }
-.cases-6>div:nth-child(5)>img{object-position:50% 100%!important;height:130%!important;top:auto!important;bottom:9%!important}
-.cases-6>div:nth-child(5){background:#0A1416}
-.cases-6>div:nth-child(5):hover>img{transform:none!important}
-html body .cases-6>div:nth-child(5)>span[aria-hidden="true"]{background:linear-gradient(0deg,#0A1416 11%,rgba(6,16,18,.72) 34%,rgba(6,16,18,.25) 62%,rgba(6,16,18,.05))!important}
+.cases-6>div:nth-child(4)>img{object-position:50% 100%!important;height:130%!important;top:auto!important;bottom:9%!important}
+.cases-6>div:nth-child(4){background:#0A1416}
+.cases-6>div:nth-child(4):hover>img{transform:none!important}
+html body .cases-6>div:nth-child(4)>span[aria-hidden="true"]{background:linear-gradient(0deg,#0A1416 11%,rgba(6,16,18,.72) 34%,rgba(6,16,18,.25) 62%,rgba(6,16,18,.05))!important}
 
 @media (min-width:1001px){.fam-ph--large{grid-column:span 2}}
 @media (max-width:760px){
@@ -760,10 +760,10 @@ html body .cases-6>div:nth-child(5)>span[aria-hidden="true"]{background:linear-g
   .fam-mosaic>:nth-child(8),.fam-mosaic>:nth-child(9){order:3}
   .fam-mosaic>:nth-child(7),.fam-mosaic>:nth-child(10){order:4}
 }
-html body .cases-6>div:nth-child(2)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.88) 14%,rgba(6,16,18,.35) 46%,rgba(6,16,18,0) 70%)!important}
-@media (max-width:760px){.cases-6>div:nth-child(2)>img{object-position:62% 30%!important}}
-html body .cases-6>div:nth-child(4)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.82) 10%,rgba(6,16,18,.2) 48%,rgba(6,16,18,0) 70%)!important}
-.cases-6>div:nth-child(4)>img{object-position:50% 78%!important;filter:brightness(1.18)}
+html body .cases-6>div.x-famille>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.88) 14%,rgba(6,16,18,.35) 46%,rgba(6,16,18,0) 70%)!important}
+@media (max-width:760px){.cases-6>div.x-famille>img{object-position:62% 30%!important}}
+html body .cases-6>div:nth-child(3)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.82) 10%,rgba(6,16,18,.2) 48%,rgba(6,16,18,0) 70%)!important}
+.cases-6>div:nth-child(3)>img{object-position:50% 78%!important;filter:brightness(1.18)}
 
 /* Bloc raquettes sur la page ski de fond */
 .bloc-raquettes{display:grid;grid-template-columns:1.4fr 1fr;background:#F3F5F4;border:1px solid #DDE2E1;color:#0C1C1F;text-decoration:none}
@@ -777,3 +777,29 @@ img[data-f="manigod-ski-ride-bootfitting-semelle-sur-mesure"]{object-position:50
 /* Accueil : case consigne, magasin en plan plus large */
 img[data-f="manigod-ski-ride-magasin-col-de-la-croix-fry-nuit"][loading="lazy"][style*="inset: 0"]{height:76%!important;inset:8% 0 auto 0!important;object-position:47% 50%!important;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 16%,#000 74%,transparent);mask-image:linear-gradient(180deg,transparent 0,#000 16%,#000 74%,transparent)}
 *:has(>img[data-f="manigod-ski-ride-magasin-col-de-la-croix-fry-nuit"][style*="inset: 0"]){background:linear-gradient(180deg,#16235C 0,#0A1016 45%)!important}
+
+/* Accueil : duo famille / sensations */
+.duo-sec{max-width:1360px;margin:0 auto;padding:70px 40px 0;box-sizing:border-box}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.duo>a{position:relative;display:block;height:clamp(260px,38vh,400px);overflow:hidden;color:#FFFFFF;text-decoration:none}
+.duo>a>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.duo>a::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,16,18,.85) 8%,rgba(6,16,18,.25) 50%,rgba(6,16,18,0) 75%)}
+.duo>a>span{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:26px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.duo b{font-family:Archivo,sans-serif;font-stretch:125%;font-weight:800;font-size:30px;line-height:34px}
+.duo i{font-style:normal;font-family:Archivo,sans-serif;font-stretch:125%;font-weight:700;font-size:12px;letter-spacing:1.5px;color:#0C1C1F;background:#F0A06A;padding:9px 12px}
+@media (hover:hover){.duo>a:hover>img{transform:scale(1.05)}}
+@media (max-width:760px){
+  .duo-sec{padding:36px 20px 0}
+  .duo{gap:10px}
+  .duo>a{height:200px}
+  .duo>a>span{padding:12px;gap:8px}
+  .duo b{font-size:15px;line-height:18px}
+  .duo i{font-size:9px;letter-spacing:1px;padding:6px 8px}
+  .cases-6>div:nth-child(5){flex-basis:100%!important}
+  section:has(>.cases-6){padding-top:44px!important}
+}
+@media (min-width:900px){.cases-6>div:nth-child(n+4){flex:1 1 45%!important}}
+
+.carte-photo{display:block;width:calc(100% + 52px);max-width:none;margin:-26px -26px 8px;aspect-ratio:16/9;object-fit:cover}
+html body .cases-6>div:nth-child(1)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.85) 8%,rgba(6,16,18,.2) 42%,rgba(6,16,18,0) 65%)!important}
+.cases-6>div:nth-child(1)>img{filter:brightness(1.25)}
