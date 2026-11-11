@@ -674,7 +674,6 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
 @media (max-width: 640px){.atouts>a.atout--lien{padding:16px 18px 18px!important;gap:6px!important}.atouts>.atout{padding:12px 14px 14px!important}}
 
 /* Accueil : marques — 2 cartes phares compactes + logos (6 ordi, 3 mobile) */
-.marques-phares>a img{aspect-ratio:5/2!important}
 .marques-logos{grid-template-columns:repeat(6,1fr)!important}
 @media (max-width:900px){.marques-logos{grid-template-columns:repeat(3,1fr)!important}}
 @media (max-width:640px){
@@ -683,9 +682,11 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
   .marques-logos{gap:12px!important}
   .marques-logos .m-hide{display:none!important}
   .marques-phares{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important}
-  .marques-phares>a img{height:120px!important;aspect-ratio:auto!important;object-fit:cover!important}
   .marques-phares>a>span{padding:12px 12px 14px!important;gap:6px!important}
   .marques-phares>a>span>span{font-size:11px!important;letter-spacing:.5px!important}
   .marques-phares>a>span>span:first-child{font-size:15px!important}
 }
-@media (min-width:641px){.marques-phares>a:first-child img{object-position:50% 42%!important}}
+@media (min-width:641px){
+  .marques-phares>a{flex-direction:row!important;align-items:center!important}
+  .marques-phares>a img{width:48%!important;flex:none}
+}
