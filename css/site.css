@@ -752,8 +752,11 @@ html body .cases-6>div:nth-child(5)>span[aria-hidden="true"]{background:linear-g
 
 @media (min-width:1001px){.fam-ph--large{grid-column:span 2}}
 @media (max-width:760px){
+}
+
+@media (max-width:760px){
   .fam-mosaic>:nth-child(1),.fam-mosaic>:nth-child(3),.fam-mosaic>:nth-child(4),.fam-mosaic>:nth-child(5){order:1}
-  .fam-mosaic>:nth-child(2),.fam-mosaic>:nth-child(7){order:2}
-  .fam-mosaic>:nth-child(6),.fam-mosaic>:nth-child(9),.fam-mosaic>:nth-child(10){order:3}
-  .fam-mosaic>:nth-child(8),.fam-mosaic>:nth-child(11){order:4}
+  .fam-mosaic>:nth-child(2),.fam-mosaic>:nth-child(6){order:2}
+  .fam-mosaic>:nth-child(8),.fam-mosaic>:nth-child(9){order:3}
+  .fam-mosaic>:nth-child(7),.fam-mosaic>:nth-child(10){order:4}
 }
