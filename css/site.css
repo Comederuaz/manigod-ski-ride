@@ -812,3 +812,11 @@ html body .cases-6>div:nth-child(1)>span[aria-hidden="true"]{background:linear-g
 @media (max-width:760px){.duo-sec>h2{font-size:20px!important;line-height:25px!important}.duo-sec>h2 br{display:none}}
 
 @media (max-width:640px){.marques-logos{grid-template-columns:repeat(2,1fr)!important}}
+
+/* Pages activité : rangée de marques sur une seule ligne (ordinateur) */
+@media (min-width:1000px){
+  .logos-ligne{grid-template-columns:none!important;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:12px!important}
+  .logos-ligne>div{height:76px!important;padding:0 6px!important}
+  .logos-ligne>div>img{max-width:82%!important;max-height:26px!important}
+}
+@media (min-width:1000px){.logos-ligne>div>img[data-f*="van-deer"]{max-height:44px!important}}
