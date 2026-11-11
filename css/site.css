@@ -772,3 +772,6 @@ html body .cases-6>div:nth-child(4)>span[aria-hidden="true"]{background:linear-g
 .bloc-raquettes__txt>b{font-family:Archivo,sans-serif;font-stretch:125%;font-weight:800;font-size:26px;line-height:30px}
 .bloc-raquettes__txt>span:nth-child(3){font-size:16px;line-height:26px;color:#3E4B4D}
 @media (max-width:760px){.bloc-raquettes{grid-template-columns:1fr}.bloc-raquettes img{min-height:0;aspect-ratio:3/2}.bloc-raquettes__txt{padding:22px 20px;gap:10px}.bloc-raquettes__txt>b{font-size:20px;line-height:24px}}
+/* Accueil : case bootfitting, photo entière (plan large) */
+img[data-f="manigod-ski-ride-bootfitting-semelle-sur-mesure"]{object-fit:cover!important;object-position:50% 50%!important;height:72%!important;inset:0 0 auto 0!important;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent);mask-image:linear-gradient(180deg,#000 70%,transparent)}
+*:has(>img[data-f="manigod-ski-ride-bootfitting-semelle-sur-mesure"]){background:#0B0C0D!important}
