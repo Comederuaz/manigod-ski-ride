@@ -680,13 +680,18 @@ rentool-rental-widget::part(nav-badges){flex-direction:column;align-items:flex-s
   #marques>div:first-child{display:contents!important}
   #marques>div:first-child>a{order:9;align-self:center}
   .marques-logos{gap:12px!important}
-  .marques-logos .m-hide{display:none!important}
+  .marques-logos .m-hide,.marques-phares .m-off{display:none!important}
+  .marques-phares>a>span>span:last-child{align-self:flex-start}
   .marques-phares{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important}
   .marques-phares>a>span{padding:12px 12px 14px!important;gap:6px!important}
   .marques-phares>a>span>span{font-size:11px!important;letter-spacing:.5px!important}
   .marques-phares>a>span>span:first-child{font-size:15px!important}
 }
-@media (min-width:641px){
-  .marques-phares>a{flex-direction:row!important;align-items:center!important}
-  .marques-phares>a img{width:48%!important;flex:none}
+@media (min-width:1000px){
+  #marques{display:grid!important;grid-template-columns:2fr 1fr;gap:28px 24px!important}
+  #marques>div:first-child{grid-column:1/-1}
+  .marques-phares{flex-wrap:nowrap!important}
+  .marques-phares>a{flex:1 1 0!important}
+  .marques-logos{grid-template-columns:repeat(2,1fr)!important;grid-auto-rows:1fr}
+  .marques-logos>div{height:auto!important;min-height:70px}
 }
