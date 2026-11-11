@@ -764,3 +764,11 @@ html body .cases-6>div:nth-child(2)>span[aria-hidden="true"]{background:linear-g
 @media (max-width:760px){.cases-6>div:nth-child(2)>img{object-position:62% 30%!important}}
 html body .cases-6>div:nth-child(4)>span[aria-hidden="true"]{background:linear-gradient(0deg,rgba(6,16,18,.82) 10%,rgba(6,16,18,.2) 48%,rgba(6,16,18,0) 70%)!important}
 .cases-6>div:nth-child(4)>img{object-position:50% 78%!important;filter:brightness(1.18)}
+
+/* Bloc raquettes sur la page ski de fond */
+.bloc-raquettes{display:grid;grid-template-columns:1.4fr 1fr;background:#F3F5F4;border:1px solid #DDE2E1;color:#0C1C1F;text-decoration:none}
+.bloc-raquettes img{display:block;width:100%;height:100%;min-height:300px;object-fit:cover}
+.bloc-raquettes__txt{display:flex;flex-direction:column;justify-content:center;gap:14px;padding:36px}
+.bloc-raquettes__txt>b{font-family:Archivo,sans-serif;font-stretch:125%;font-weight:800;font-size:26px;line-height:30px}
+.bloc-raquettes__txt>span:nth-child(3){font-size:16px;line-height:26px;color:#3E4B4D}
+@media (max-width:760px){.bloc-raquettes{grid-template-columns:1fr}.bloc-raquettes img{min-height:0;aspect-ratio:3/2}.bloc-raquettes__txt{padding:22px 20px;gap:10px}.bloc-raquettes__txt>b{font-size:20px;line-height:24px}}
