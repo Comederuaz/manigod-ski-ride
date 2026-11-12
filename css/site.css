@@ -821,3 +821,6 @@ html body .cases-6>div:nth-child(1)>span[aria-hidden="true"]{background:linear-g
 }
 @media (min-width:1000px){.logos-ligne>div>img[data-f*="van-deer"]{max-height:44px!important}}
 @media (min-width:900px){.cases-6>div:nth-child(2)>img{object-position:50% 75%!important}}
+
+/* Mobile : tous les titres de section plus petits */
+@media (max-width:760px){:root{--site-h2-font-size:26px}h2{line-height:1.18}}
