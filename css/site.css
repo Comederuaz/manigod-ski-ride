@@ -809,7 +809,7 @@ html body .cases-6>div:nth-child(1)>span[aria-hidden="true"]{background:linear-g
   .fam-mosaic>:nth-child(11){order:5;grid-column:1/-1!important;aspect-ratio:16/9!important}
   .duo-sec>h2{margin-bottom:16px!important}
 }
-@media (max-width:760px){.duo-sec>h2{font-size:20px!important;line-height:25px!important}.duo-sec>h2 br{display:none}}
+@media (max-width:760px){.duo-sec>h2 br{display:none}}
 
 @media (max-width:640px){.marques-logos{grid-template-columns:repeat(2,1fr)!important}}
 
