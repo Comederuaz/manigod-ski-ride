@@ -795,7 +795,8 @@ img[data-f="manigod-ski-ride-magasin-col-de-la-croix-fry-nuit"][loading="lazy"][
   .duo>a>span{padding:12px;gap:8px}
   .duo b{font-size:15px;line-height:18px}
   .duo i{font-size:9px;letter-spacing:1px;padding:6px 8px}
-  .cases-6>div:nth-child(5){flex-basis:100%!important}
+  .cases-6>div:nth-child(1){flex-basis:100%!important;height:210px!important}
+  .cases-6>div:nth-child(1)>img{object-position:50% 40%!important}
   section:has(>.cases-6){padding-top:44px!important}
 }
 @media (min-width:900px){.cases-6>div:nth-child(-n+2){flex:1 1 45%!important}}
