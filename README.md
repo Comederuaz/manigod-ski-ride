@@ -9,7 +9,7 @@ Site vitrine statique du magasin Manigod Ski Ride au Col de la Croix-Fry. Il pr�
 - [`docs/design-system.md`](docs/design-system.md) : référence des couleurs, titres, composants, en-têtes, Heroes et comportements sur ordinateur et mobile.
 - `js/site-header.js` : menu Services, menu mobile et conservation du contexte de recherche dans les liens internes FR/EN.
 - `images/` : photos, logos et illustrations.
-- `sitemap.xml` et `robots.txt` : référencement, actuellement configuré pour une version de test non indexée.
+- `sitemap.xml` et `robots.txt` : référencement, site ouvert à l’indexation depuis le 14/11/2026.
 
 Pour consulter le site localement, lancer `python -m http.server 5500 --bind 127.0.0.1` dans ce dossier, puis ouvrir `http://127.0.0.1:5500/`. Cette origine exacte est déclarée pour le développement Rentool ; un autre hôte ou port doit aussi être déclaré pour accéder au formulaire avant publication.
 

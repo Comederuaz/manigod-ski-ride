@@ -24,5 +24,5 @@ Site statique de Manigod Ski Ride, en français à la racine et en anglais dans 
 ## Vérification et publication
 
 - Tester l’accueil, la page Location, le menu Services, le panier et le compte sur ordinateur et mobile ; vérifier les liens, ancres et deux langues.
-- Le dépôt est actuellement une version de test avec `noindex` et `robots.txt` bloquant l’indexation. Revoir ces réglages seulement lors de la préparation de la mise en ligne.
+- Le site est en ligne et ouvert à l’indexation (14/11/2026) : ne pas remettre de `noindex` ni de `Disallow` sur les pages publiques. Seuls 404.html et les pages de redirection gardent `noindex`.
 - Aucun import ou publication Rentool sans instruction explicite de l’utilisateur.
