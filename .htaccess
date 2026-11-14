@@ -1,0 +1,75 @@
+# Manigod Ski Ride — configuration Apache (o2switch)
+# Page d'accueil par défaut (évite l'erreur 404 sur l'adresse sans /index.html)
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# Adresse unique : https://www.manigod-ski-ride.com
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.manigod-ski-ride.com%{REQUEST_URI} [L,R=301]
+
+# Anciennes adresses du site WordPress -> nouvelles pages (redirections permanentes)
+RedirectMatch 301 ^/atelier/?$ /atelier.html
+RedirectMatch 301 ^/bons\-plans/?$ /bons-plans.html
+RedirectMatch 301 ^/bootfitting/?$ /bootfitting.html
+RedirectMatch 301 ^/cgv/?$ /cgv.html
+RedirectMatch 301 ^/conseils/?$ /conseils.html
+RedirectMatch 301 ^/consigne\-a\-ski/?$ /consigne-a-ski.html
+RedirectMatch 301 ^/contact/?$ /contact.html
+RedirectMatch 301 ^/en/atelier/?$ /en/atelier.html
+RedirectMatch 301 ^/en/bons\-plans/?$ /en/bons-plans.html
+RedirectMatch 301 ^/en/booking/?$ /en/location.html#reserver
+RedirectMatch 301 ^/en/boot\-fitting/?$ /en/bootfitting.html
+RedirectMatch 301 ^/en/bootfitting/?$ /en/bootfitting.html
+RedirectMatch 301 ^/en/cgv/?$ /en/cgv.html
+RedirectMatch 301 ^/en/conseils/?$ /en/conseils.html
+RedirectMatch 301 ^/en/consigne\-a\-ski/?$ /en/consigne-a-ski.html
+RedirectMatch 301 ^/en/contact\-us/?$ /en/contact.html
+RedirectMatch 301 ^/en/faq/?$ /en/faq.html
+RedirectMatch 301 ^/en/le\-magasin/?$ /en/le-magasin.html
+RedirectMatch 301 ^/en/legal\-notice/?$ /en/mentions-legales.html
+RedirectMatch 301 ^/en/location\-ski\-saison/?$ /en/location-ski-saison.html
+RedirectMatch 301 ^/en/location/?$ /en/location.html
+RedirectMatch 301 ^/en/location/raquettes/?$ /en/location-raquettes.html
+RedirectMatch 301 ^/en/location/ski\-alpin/?$ /en/location-ski-alpin.html
+RedirectMatch 301 ^/en/location/ski\-de\-fond/?$ /en/location-ski-de-fond.html
+RedirectMatch 301 ^/en/location/ski\-de\-randonnee/?$ /en/location-ski-de-randonnee.html
+RedirectMatch 301 ^/en/location/snowboard/?$ /en/location-snowboard.html
+RedirectMatch 301 ^/en/mentions\-legales/?$ /en/mentions-legales.html
+RedirectMatch 301 ^/en/nos\-athletes/?$ /en/nos-athletes.html
+RedirectMatch 301 ^/en/privacy\-policy/?$ /en/mentions-legales.html
+RedirectMatch 301 ^/en/ski\-hire/?$ /en/location-ski-alpin.html
+RedirectMatch 301 ^/en/ski\-nocturne/?$ /en/ski-nocturne.html
+RedirectMatch 301 ^/en/specific\-strengths/?$ /en/le-magasin.html
+RedirectMatch 301 ^/en/widget/?$ /en/location.html#reserver
+RedirectMatch 301 ^/faq/?$ /faq.html
+RedirectMatch 301 ^/le\-magasin/?$ /le-magasin.html
+RedirectMatch 301 ^/location\-ski\-saison/?$ /location-ski-saison.html
+RedirectMatch 301 ^/location/?$ /location.html
+RedirectMatch 301 ^/location/raquettes/?$ /location-raquettes.html
+RedirectMatch 301 ^/location/ski\-alpin/?$ /location-ski-alpin.html
+RedirectMatch 301 ^/location/ski\-de\-fond/?$ /location-ski-de-fond.html
+RedirectMatch 301 ^/location/ski\-de\-randonnee/?$ /location-ski-de-randonnee.html
+RedirectMatch 301 ^/location/snowboard/?$ /location-snowboard.html
+RedirectMatch 301 ^/mentions\-legales/?$ /mentions-legales.html
+RedirectMatch 301 ^/nos\-athletes/?$ /nos-athletes.html
+RedirectMatch 301 ^/partenaires/?$ /le-magasin.html#partenaires
+RedirectMatch 301 ^/politique\-confidentialite/?$ /mentions-legales.html
+RedirectMatch 301 ^/reservation\-bootfitting/?$ /bootfitting.html
+RedirectMatch 301 ^/ski\-nocturne/?$ /ski-nocturne.html
+
+# Cache navigateur (vitesse)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml text/plain application/xml
+</IfModule>
