@@ -59,6 +59,11 @@ RedirectMatch 301 ^/politique\-confidentialite/?$ /mentions-legales.html
 RedirectMatch 301 ^/reservation\-bootfitting/?$ /bootfitting.html
 RedirectMatch 301 ^/ski\-nocturne/?$ /ski-nocturne.html
 
+RedirectMatch 301 ^/location-ski-snowboard/?$ /location.html
+RedirectMatch 301 ^/atelier-ski-snowboard/?$ /atelier.html
+RedirectMatch 301 ^/en/ski-service/?$ /en/atelier.html
+RedirectMatch 301 ^/en/partners/?$ /en/le-magasin.html
+
 # Cache navigateur (vitesse)
 <IfModule mod_expires.c>
   ExpiresActive On
